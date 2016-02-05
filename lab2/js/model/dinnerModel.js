@@ -6,8 +6,8 @@ var DinnerModel = function () {
     //TODO Lab 2 implement the data structure that will hold number of guest
     // and selected dinner options for dinner menu
 
-    var numberOfGuests = 0;
-    var fullMenu = [];
+    this.numberOfGuests = 0;
+    this.fullMenu = [];
 
     this.setNumberOfGuests = function (num) {
         this.numberOfGuests = num;
@@ -15,29 +15,29 @@ var DinnerModel = function () {
 
     // should return
     this.getNumberOfGuests = function () {
-        return numberOfGuests;
+        return this.numberOfGuests;
     };
 
     //Returns the dish that is on the menu for selected type
     this.getSelectedDish = function (type) {
-        for (var i = 0; i < fullMenu.length; i++) {
-            if (type === fullMenu[i].type) {
-                return fullMenu[i];
+        for (var i = 0; i < this.fullMenu.length; i++) {
+            if (type === this.fullMenu[i].type) {
+                return this.fullMenu[i];
             }
         }
     };
 
     //Returns all the dishes on the menu.
     this.getFullMenu = function () {
-        return fullMenu;
+        return this.fullMenu;
     };
 
     //Returns all ingredients for all the dishes on the menu.
     this.getAllIngredients = function () {
         var ingredients = [];
-        for (var i = 0; i < fullMenu.length; i++) {
-            for (var j = 0; j < fullMenu[i].ingredients; j++) {
-                ingredients.push(fullMenu[i].ingredients[j]);
+        for (var i = 0; i < this.fullMenu.length; i++) {
+            for (var j = 0; j < this.fullMenu[i].ingredients; j++) {
+                ingredients.push(this.fullMenu[i].ingredients[j]);
             }
         }
         return ingredients;
@@ -46,10 +46,9 @@ var DinnerModel = function () {
     //Returns the total price of the menu (all the ingredients multiplied by number of guests).
     this.getTotalMenuPrice = function () {
         var totalMenuPrice = 0;
-
-        for (var i = 0; i < fullMenu.length; i++) {
-            for (var j = 0; j < fullMenu[i].ingredients; j++) {
-                totalMenuPrice += fullMenu[i].ingredients[j].price;
+        for (var i = 0; i < this.fullMenu.length; i++) {
+            for (var j = 0; j < this.fullMenu[i].ingredients.length; j++) {
+                totalMenuPrice += this.fullMenu[i].ingredients[j].price;
             }
         }
         return totalMenuPrice;
@@ -61,19 +60,19 @@ var DinnerModel = function () {
         for (var i = 0; i < dishes.length; i++) {
             if (dishes[i].id === id) {
                 //remove
-                fullMenu.splice(i, 1);
+                this.fullMenu.splice(i, 1);
 
                 //add the new one
-                fullMenu.push(dishes[i]);
+                this.fullMenu.push(dishes[i]);
             }
         }
     };
 
     //Removes dish from menu
     this.removeDishFromMenu = function (id) {
-        for (var i = 0; i < fullMenu.length; i++) {
-            if (fullMenu[i].id === id.id) {
-                fullMenu.splice(i, 1);
+        for (var i = 0; i < this.fullMenu.length; i++) {
+            if (this.fullMenu[i].id === id.id) {
+                this.fullMenu.splice(i, 1);
             }
         }
     };
