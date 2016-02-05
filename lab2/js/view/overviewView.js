@@ -22,7 +22,7 @@ var OverviewView = function (container, model) {
     }
     str += '</ul>';
 
-    
+
     overviewList.append(str);
 
     overviewList.append('<li> The recipe can be found here </li>');
