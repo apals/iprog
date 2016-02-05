@@ -6,6 +6,7 @@ $(function () {
     var exampleView = new ExampleView($("#exampleView"));
     var newPartyView = new NewPartyView($("#newPartyView"));
     var ingredientsView = new IngredientsView($("#ingredientsView"));
+    var preparationsView = new PreparationsView($("#preparationsView"), model);
 
 	var previousView = new PreviousView($("#previousparties"));
 
