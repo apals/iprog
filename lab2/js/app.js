@@ -7,4 +7,6 @@ $(function () {
     var newPartyView = new NewPartyView($("#newPartyView"));
     var ingredientsView = new IngredientsView($("#ingredientsView"));
 
+	var previousView = new PreviousView($("#previousparties"));
+
 });
