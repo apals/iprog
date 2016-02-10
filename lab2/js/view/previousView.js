@@ -5,9 +5,9 @@ var PreviousView = function (container) {
     // and/or ones that responed to interaction)
     var previousList = container.find("#prevparties");
 
-    var parties = ["party 1", "party2"];
+    var parties = ["Martin's Wedding", "Birthday Party for Anna", "Dinner at Home", "New Year's Eve", "Christmas Day Party"];
 
-    previousList.html("Previous parties yolo");
+    previousList.html("Here is a list of your previous parties:");
 
     var list = $("<ul>");
 
