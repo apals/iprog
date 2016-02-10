@@ -11,29 +11,43 @@
 
     <link rel="stylesheet" href="main.css">
 
+    <!-- Only used on the main page -->
+    <link rel="stylesheet" href="cover.css">
+
 </head>
 <body>
-<div class="container-fluid">
     <!-- tabs left -->
-    <div class="tabbable">
-        <ul class="nav nav-pills nav-stacked col-md-3">
-            <li class="active"><a href="#createparty" data-toggle="tab">New Party</a></li>
-            <li><a href="#previousparties" data-toggle="tab">Parties</a></li>
-        </ul>
-        <div class="tab-content col-md-9">
+     <div class="site-wrapper">
 
-            <div class="tab-pane active" id="newPartyView">
+      <div class="site-wrapper-inner">
 
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Elite Party Planner</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="#">Your previous parties</a></li>
+                </ul>
+              </nav>
             </div>
+          </div>
 
-
-            <div class="tab-pane" id="previousparties">
-
-            </div>
+          <div class="inner-cover">
+            <h1 class="cover-heading">Plan the perfect party</h1>
+            <p class="lead">Have you ever wanted to create the perfect dinner party, but never had the inspiration? Tired of forgetting how to make that one dish that you tasted that one time? Look no further, the Elite Party Planner will help you!</p>
+            <p class="lead">
+              <a href="#" class="btn btn-lg btn-default">Get started</a>
+            </p>
+          </div>
 
         </div>
+
+      </div>
+
     </div>
-</div>
 <!-- /tabs -->
 
 <!-- jQuery -->
@@ -41,10 +55,5 @@
 <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
-<!-- The application JavaScript code -->
-<script src="js/app.js"></script>
-<script src="js/model/dinnerModel.js"></script>
-<script src="js/view/exampleView.js"></script>
-<script src="js/view/exampleViewController.js"></script>
 </body>
 </html>
