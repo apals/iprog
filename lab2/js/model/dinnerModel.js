@@ -6,8 +6,20 @@ var DinnerModel = function () {
     //TODO Lab 2 implement the data structure that will hold number of guest
     // and selected dinner options for dinner menu
 
+    //TODO - Add dish to menu is bugged, does not splice correctly
+
     this.numberOfGuests = 0;
     this.fullMenu = [];
+    this.nameOfParty = "";
+
+    this.generateTestParty = function () {
+        this.numberOfGuests = 8;
+        this.nameOfParty = "Elite Dinner";
+        this.addDishToMenu(1);
+        this.addDishToMenu(101);
+        this.addDishToMenu(100);
+        this.addDishToMenu(200);
+    }
 
     this.setNumberOfGuests = function (num) {
         this.numberOfGuests = num;
@@ -327,7 +339,7 @@ var DinnerModel = function () {
         'name': 'Chocolat Ice cream',
         'type': 'dessert',
         'image': 'icecream.jpg',
-        'description': "Here is how you make it... Lore ipsum...",
+        'description': "Firstly, place the ice cream in a small bowl. Sprinkle some sprinkles all over that cold ice cream. Finish by adding chocolate.",
         'ingredients': [{
             'name': 'ice cream',
             'quantity': 100,

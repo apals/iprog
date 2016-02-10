@@ -1,7 +1,13 @@
 //ExampleView Object constructor
 var PreparationsView = function (container, model) {
 
-	var dishDescription = [model.getDish(1), model.getDish(100)];
+	//TODO - For each element in the menu, do its own list of ingreds, as a seperate list
+
+	model.generateTestParty();
+
+	var dishDescription = model.getFullMenu();
+
+	console.log(dishDescription)
 
 	var result = dishDescription.map(function(a) {return a.description;});
 
@@ -18,6 +24,8 @@ var PreparationsView = function (container, model) {
 	console.log(result[0]);
 
 	prepSteps.reverse();
+
+	console.log(prepSteps)
 
 	for (var i = prepSteps.length - 1; i >= 0; i--) {
 		var li = $("<li>");
