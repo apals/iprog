@@ -4,3 +4,49 @@ body {
 
 
 .container { background: white}
+
+.left {
+    float: left;
+}
+
+
+header {
+    background: red;
+    padding: 2rem;
+}
+
+#panel {
+    background: blue;
+    float: left;
+    width: 20%;
+    height: 100%;
+}
+
+#select-dish {
+    background: yellow;
+    width: 80%;
+    overflow: hidden;
+}
+
+#meals-view {
+    background: lightgrey;
+    height: 100%;
+    width: 80%;
+    overflow: hidden;
+}
+
+#meals-view div {
+    margin: 1rem;
+    display: inline-block;
+}
+
+#meals-view div p {
+    text-align: center;
+}
+
+header h1 {
+    text-transform: uppercase;
+    margin: 0;
+    padding: 2rem 2rem;
+    display: inline;
+}

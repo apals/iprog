@@ -10,5 +10,6 @@ $(function () {
 
     var overviewView = new OverviewView($("#overviewView"), model);
 	var previousView = new PreviousView($("#previousparties"));
+    var mealsView = new MealsView($("#meals-view"));
 
 });
