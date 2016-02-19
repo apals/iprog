@@ -4,10 +4,10 @@ var PreparationsView = function (container, model) {
 	//TODO - For each element in the menu, do its own list of ingreds, as a seperate list
 
 	model.generateTestParty();
+	container.prepend($('<h2>').append("Preparations"));
 
 	var dishDescription = model.getFullMenu();
 
-	console.log(dishDescription)
 
 	var result = dishDescription.map(function(a) {return a.description;});
 

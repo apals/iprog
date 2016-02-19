@@ -2,13 +2,21 @@ body {
     background: #fff;
 }
 
-
-.container { background: white}
+.container {
+    background: white
+}
 
 .left {
     float: left;
 }
 
+h6 {
+    margin-top: 0;
+}
+
+#panel > * {
+    max-width: 100%;
+}
 
 header {
     background: red;
@@ -17,21 +25,20 @@ header {
 
 #panel {
     background: blue;
-    float: left;
-    width: 20%;
+    width: 200px;
+    position: absolute;
     height: 100%;
+    left: 0;
 }
 
 #select-dish {
     background: yellow;
-    width: 80%;
     overflow: hidden;
 }
 
 #meals-view {
     background: lightgrey;
     height: 100%;
-    width: 80%;
     overflow: hidden;
 }
 
@@ -49,4 +56,47 @@ header h1 {
     margin: 0;
     padding: 2rem 2rem;
     display: inline;
+}
+
+#detail-view {
+    display: inline-block;
+    height: 100%;
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+
+#ingredientsView {
+    display: inline-block;
+    text-align: center;
+    width: 50%;
+    height: 100%;
+}
+
+#ingredients-form {
+    width: 100%;
+    height: 100%;
+}
+
+#super-wrapper {
+    float: left;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.inner-site-wrapper {
+    padding-left: 200px;
+}
+
+.clearfix:after {
+    content: " "; /* Older browser do not support empty content */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+#preparationsView {
+    clear: both;
 }
