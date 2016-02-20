@@ -16,7 +16,6 @@ var DinnerModel = function () {
         this.numberOfGuests = 8;
         this.nameOfParty = "Elite Dinner";
         this.addDishToMenu(1);
-        this.addDishToMenu(101);
         this.addDishToMenu(100);
         this.addDishToMenu(200);
     }
@@ -28,6 +27,15 @@ var DinnerModel = function () {
     // should return
     this.getNumberOfGuests = function () {
         return this.numberOfGuests;
+    };
+
+
+    this.setPartyName = function (name) {
+        this.nameOfParty = name;
+    };
+
+    this.getPartyName = function () {
+        return this.nameOfParty;
     };
 
     //Returns the dish that is on the menu for selected type
