@@ -21,6 +21,8 @@ h6 {
 header {
     background: red;
     padding: 2rem;
+    border-style: solid;
+    border-width: 0 0 1px 0;
 }
 
 #panel {
@@ -99,4 +101,42 @@ header h1 {
 
 #preparationsView {
     clear: both;
+}
+
+
+.right {
+    float: right;
+}
+
+.top-container > * {
+    margin: 20px;
+}
+
+.top-container {
+    background: yellow;
+    overflow: auto;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+}
+
+.full-menu-wrapper {
+    clear: both;
+    text-align: center;
+    height: 100%;
+}
+
+.meal {
+    height: auto;
+    width: 20%;
+    padding: 2rem;
+    display: inline-block;
+}
+
+.meal img {
+    width: 100%;
+    height: 100%;
+}
+
+.align-center {
+    text-align: center;
 }
