@@ -9,7 +9,8 @@ $(function () {
     var preparationsView = new PreparationsView($("#preparationsView"), model);
 
     var overviewView = new OverviewView($("#overviewView"), model);
+    var selectDishView = new SelectDishView($("#selectDishView"), model);
 	var previousView = new PreviousView($("#previousparties"));
-    var mealsView = new MealsView($("#meals-view"));
+    var mealsView = new MealsView($("#meals-view"), model);
 
 });

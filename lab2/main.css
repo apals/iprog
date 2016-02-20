@@ -46,27 +46,40 @@ header {
     border-color: lightblue;
     border-width: 0 0 2px 0;
     text-align: right;
-    padding: 5px 20% 5px 20%;
+    padding: 5px 1% 5px 20%;
+    color: black;
     
 }
 
 #panel {
-    background: blue;
+    background: #44AAFF;
     width: 200px;
     position: absolute;
     height: 100%;
     left: 0;
+    padding-left: 1%;
+    padding-right: 1%;
 }
 
 #select-dish {
-    background: yellow;
-    overflow: hidden;
+    padding: 5px 0 5px 7%;
+    background: #88CCFF;
+    overflow: hiden;
+    border-style: solid;
+    border-color: lightblue;
+    border-width: 0 0 2px 0;
+    text-align: center;
+    color: black;
 }
 
 #meals-view {
-    background: lightgrey;
     height: 100%;
     overflow: hidden;
+    text-align: center;
+}
+
+#dish-in-view {
+    margin: 40% 40px 0 40px;
 }
 
 #meals-view div {
@@ -76,6 +89,10 @@ header {
 
 #meals-view div p {
     text-align: center;
+    font-family: Polo;
+    font-size: 18px;
+    color: #FFFFFF;
+
 }
 
 header h1 {

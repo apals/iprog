@@ -74,6 +74,20 @@ var DinnerModel = function () {
         return totalMenuPrice;
     };
 
+    //Returns the total price of the menu (all the ingredients multiplied by number of guests).
+    this.getDishPrice = function (id) {
+        var totalDishPrice = 0;
+        for (var i = 0; i < dishes.length; i++) {
+            if(dishes[i].id === id) {
+                for (var j = 0; j < dishes[i].ingredients.length; j++) {
+                    totalDishPrice += dishes[i].ingredients[j].price;
+                }
+            }
+            
+        }
+        return totalDishPrice;
+    };
+
     //Adds the passed dish to the menu. If the dish of that type already exists on the menu
     //it is removed from the menu and the new one added.
     this.addDishToMenu = function (id) {
@@ -344,7 +358,7 @@ var DinnerModel = function () {
         }]
     }, {
         'id': 200,
-        'name': 'Chocolat Ice cream',
+        'name': 'Chocolate Ice cream',
         'type': 'dessert',
         'image': 'icecream.jpg',
         'description': "Firstly, place the ice cream in a small bowl. Sprinkle some sprinkles all over that cold ice cream. Finish by adding chocolate.",
