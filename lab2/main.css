@@ -140,3 +140,11 @@ header h1 {
 .align-center {
     text-align: center;
 }
+
+.meal-preparation {
+    margin: 1rem 0;
+}
+
+h3 {
+    margin-top: 0;
+}
