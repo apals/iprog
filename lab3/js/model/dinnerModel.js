@@ -149,6 +149,10 @@ var DinnerModel = function () {
         this.notifyObservers();
     };
 
+    this.getCurrentList = function() {
+        return this.getAllDishes(this.currentType, this.currentSearch);
+    }
+
 
     //function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
     //you can use the filter argument to filter out the dish by name or ingredient (use for search)
