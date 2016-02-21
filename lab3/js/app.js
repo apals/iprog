@@ -6,6 +6,7 @@ $(function () {
     //And create the needed controllers and views
 
     var ingredientsView = new IngredientsView($("#ingredientsView"), model);
+    var ingredientsViewController = new IngredientsViewController(ingredientsView, model);
     var preparationsView = new PreparationsView($("#preparationsView"), model);
 
     var overviewView = new OverviewView($("#overviewView"), model);

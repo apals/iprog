@@ -4,15 +4,24 @@ var IngredientsView = function (container, model) {
 
     model.addObserver(this);
 
+    var h2 = $('<h2>').append("Ingredients for " + model.getNumberOfGuests() + " people");
+    container.prepend(h2);
+    var table = $('<table>').attr("id", "ingredients-table");
+    container.append(table);
+
+
+    var lastSpan = $('<span>').append(model.getTotalMenuPrice()).addClass("right");
+    setHtml();
+
 
     function setHtml() {
         var meal = model.getDish(model.getCurrentId());
         var numberOfGuests = model.getNumberOfGuests();
-        container.prepend($('<h2>').append("Ingredients for " + numberOfGuests + " people"));
 
-        var table = $('<table>').attr("id", "ingredients-table");
-        container.append(table);
+        h2.html("Ingredients for " + numberOfGuests + " people");
 
+
+        table.empty();
 
         meal.ingredients.forEach(function (ingredient) {
             var row = $('<tr>');
@@ -23,15 +32,18 @@ var IngredientsView = function (container, model) {
             table.append(row);
         });
 
+        lastSpan.html(model.getTotalMenuPrice());
 
-        container.append($('<hr>'));
-        container.append($('<button>').append("Confirm").addClass("left"));
-        container.append($('<span>').append(model.getTotalMenuPrice()).addClass("right"));
+
     }
+
+    container.append($('<hr>'));
+    var button = $('<button>').append("Confirm").attr("id", "confirm-dish-btn");
+    container.append(button);
+    container.append(lastSpan);
 
 
     this.update = function () {
-        container.empty();
         setHtml();
     }
 };

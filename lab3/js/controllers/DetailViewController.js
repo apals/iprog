@@ -7,8 +7,6 @@ var DetailViewController = function (view, model) {
     var backbtn = $('#back-to-select-dish-btn');
     var theClickFunction = function () {
 
-        console.log($('.meal-container'));
-
         $('#meals-view').css('display', 'block');
         $('#select-dish').css('display', 'block');
 
@@ -29,9 +27,6 @@ var DetailViewController = function (view, model) {
 
         var meal = $('.meal-container');
         meal.click(function () {
-            console.log($('.meal-container'));
-
-
             $("#meals-view").css('display', 'none');
             $('#select-dish').css('display', 'none');
 

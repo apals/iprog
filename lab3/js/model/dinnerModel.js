@@ -15,7 +15,7 @@ var DinnerModel = function () {
     this.currentSearch = "";
     this.currentType = "";
     this.inspectedDishId = 1;
-    this.currentId = 0;
+    this.currentId = 1;
 
 
     this.generateTestParty = function () {
@@ -145,15 +145,26 @@ var DinnerModel = function () {
     //Adds the passed dish to the menu. If the dish of that type already exists on the menu
     //it is removed from the menu and the new one added.
     this.addDishToMenu = function (id) {
-        for (var i = 0; i < dishes.length; i++) {
-            if (dishes[i].id === id) {
-                //remove
-                this.fullMenu.splice(i, 1);
-
-                //add the new one
-                this.fullMenu.push(dishes[i]);
+        var type;
+        var dish;
+        for (var j = 0; j < dishes.length; j++) {
+            if (dishes[j].id == id) {
+                type = dishes[j].type;
+                dish = dishes[j];
+                break;
             }
         }
+
+        for (var i = 0; i < this.fullMenu.length; i++) {
+            if (this.fullMenu[i].type === type) {
+                //remove
+                this.fullMenu.splice(i, 1);
+            }
+        }
+
+        //add the new one
+        this.fullMenu.push(dish);
+
         this.notifyObservers();
     };
 
