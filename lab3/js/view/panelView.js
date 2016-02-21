@@ -32,7 +32,7 @@ var PanelView = function (container, model) {
             $("#dish-and-cost").append(menu[i].name + " - " + model.getDishPrice(menu[i].id) + " kr").append("<br>");
         }
 
-        $("#dish-and-cost").append("<br><br>Total menu cost: " + model.getTotalMenuPrice() + "kr.");
+        $("#dish-and-cost").append("<br><br>Total menu cost: " + model.getTotalMenuPrice() * model.getNumberOfGuests() + "kr.");
     }
 
     this.update = function() {
