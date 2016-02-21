@@ -35,6 +35,6 @@ var IngredientsView = function (container, model) {
             row.append($('<td>').append(ingredient.price));
             table.append(row);
         });
-        
+
     }
 };
