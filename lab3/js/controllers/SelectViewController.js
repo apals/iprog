@@ -4,12 +4,19 @@
 //IngredientsViewController Object constructor
 var SelectViewController = function(view, model ) {
 
-	$("#searchfield").change(function() {
+	var searchbar = $("#searchfield");
+	searchbar.change(function() {
 
 		model.setCurrentSearch(searchbar.value);
 		console.log("You searched for  " + searchbar.value);
 	});
 
-	
+
+	$('#types').change(function () {
+		var optionSelected = $(this).find("option:selected");
+		console.log(optionSelected.val());
+		
+		model.setType(optionSelected.val());
+	});
 
 };

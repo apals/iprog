@@ -13,6 +13,7 @@ var DinnerModel = function () {
     this.nameOfParty = "";
     this.observers = [];
     this.currentSearch = "";
+    this.currentType = "";
     this.inspectedDishId = 1;
 
 
@@ -67,6 +68,16 @@ var DinnerModel = function () {
     this.getCurrentSearch = function () {
         return this.currentSearch;
     };
+
+
+    this.setType = function(type) {
+        this.currentType = type;
+        this.notifyObservers();
+    }
+
+    this.getType = function() {
+        return this.currentType;
+    }
 
 
 
