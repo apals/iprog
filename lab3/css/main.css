@@ -246,15 +246,3 @@ h3 {
     margin-right: auto;
     width: 100%;
 }
-
-.active-inline-block {
-    display: inline-block !important;
-}
-
-.active-block {
-    display: block !important;
-}
-
-.inactive {
-    display: none;
-}

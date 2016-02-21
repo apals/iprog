@@ -18,13 +18,11 @@ var MealsView = function (container, model) {
                 container.append(row);
             }
             var id = availableMenus[i].id;
-            console.log("id: " + id);
             var div = $('<div>').addClass("col-md-4").addClass("meal-container").attr("meal-id", id);
             div.append($('<img>').attr('src', 'images/' + availableMenus[i].image + '').attr('id', 'dish-in-view'));
             div.append($('<p>').append(availableMenus[i].name));
             div.append($('<p>').addClass("small-text").append(availableMenus[i].description));
             div.appendTo(row);
-
         }
     }
 

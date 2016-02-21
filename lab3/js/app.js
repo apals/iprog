@@ -20,6 +20,7 @@ $(function () {
     var mealsViewController = new MealsViewController(mealsView, model);
 
     var detailView = new DetailView($("#detail-view"), model);
+    var detailViewController = new DetailViewController(detailView, model);
     var preparationsOverviewView = new PreparationsOverviewView($("#preparations-overview-view"), model);
     var headerInfoView = new HeaderInfoView($("#header-info-view"), model);
 

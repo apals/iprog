@@ -30,6 +30,4 @@ var PreparationsView = function (container, model) {
         setHtml();
     };
 
-    console.log("preparationsview");
-
 };

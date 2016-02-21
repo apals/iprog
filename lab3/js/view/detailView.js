@@ -14,6 +14,7 @@ var DetailView = function (container, model) {
     container.append(h2);
     container.append(img);
     container.append(p);
+    container.append($('<button>').attr("id", "back-to-select-dish-btn").append("Back to select dish"));
 
     function setHtml() {
         var meal = model.getDish(model.getCurrentId());
