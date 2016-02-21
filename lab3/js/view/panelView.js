@@ -8,7 +8,10 @@ var PanelView = function (container, model) {
     model.addObserver(this);
 
 
-    container.append($("<h6>").attr("id", "paneltitle"));
+    container.append($("<h3>").attr("id", "paneltitle"));
+    container.append($("<hr>"));
+    container.append($('<input>').attr("type", "text").attr("id", "name-of-party-input").attr("placeholder", "Party name"));
+    container.append($("<hr>"));
     container.append($('<input>').attr("type", "number").attr("id", "number-of-guests-input").attr("placeholder", "Guests").attr("value", "0"));
     container.append($("<hr>"));
     container.append($("<h4>").append("Dish Name - Cost"));

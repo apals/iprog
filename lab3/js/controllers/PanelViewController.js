@@ -13,4 +13,11 @@ var PanelViewController = function(view, model ) {
 
         }
     });
+
+    var partyname = $("#name-of-party-input");
+	partyname.change(function() {
+
+		model.setPartyName(partyname.val());
+		console.log("Name set to " + partyname.val());
+	});
 };
