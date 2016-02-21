@@ -87,10 +87,8 @@ header {
 }
 
 #dish-in-view {
-   /* margin: 40% 40px 0 40px;*/
+    /* margin: 40% 40px 0 40px;*/
 }
-
-
 
 #meals-view div {
     padding: 1rem;
@@ -127,6 +125,11 @@ header span {
     width: 50%;
     text-align: center;
     padding: 0 2rem;
+}
+
+#detail-view img {
+    width: 70%;
+    height: 70%;
 }
 
 #ingredientsView {
@@ -212,7 +215,7 @@ header span {
 
 .meal-preparation {
     width: 100%;
-    margin:0;
+    margin: 0;
 }
 
 .meal-preparation img {
