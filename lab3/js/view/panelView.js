@@ -39,6 +39,6 @@ var PanelView = function (container, model) {
         setHtml();
     };
     container.append($("<hr>"));
-    container.append($("<button>").append("Confirm Dinner"));
+    container.append($("<button>").attr("id", "confirm-dinner-btn").append("Confirm Dinner"));
 
 };
