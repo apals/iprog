@@ -11,6 +11,7 @@ var DinnerModel = function () {
     this.numberOfGuests = 0;
     this.fullMenu = [];
     this.nameOfParty = "";
+    this.observers = [];
 
     this.generateTestParty = function () {
         this.numberOfGuests = 8;
@@ -20,8 +21,22 @@ var DinnerModel = function () {
         this.addDishToMenu(200);
     };
 
+    /*****************************************
+     Observable implementation
+     *****************************************/
+    this.addObserver = function (observer) {
+        this.observers.push(observer);
+    };
+
+    this.notifyObservers = function () {
+        for (var i = 0; i < this.observers.length; i++) {
+            this.observers[i].update();
+        }
+    };
+
     this.setNumberOfGuests = function (num) {
         this.numberOfGuests = num;
+        notifyObservers();
     };
 
     // should return
@@ -32,6 +47,7 @@ var DinnerModel = function () {
 
     this.setPartyName = function (name) {
         this.nameOfParty = name;
+        this.notifyObservers();
     };
 
     this.getPartyName = function () {
@@ -78,12 +94,12 @@ var DinnerModel = function () {
     this.getDishPrice = function (id) {
         var totalDishPrice = 0;
         for (var i = 0; i < dishes.length; i++) {
-            if(dishes[i].id === id) {
+            if (dishes[i].id === id) {
                 for (var j = 0; j < dishes[i].ingredients.length; j++) {
                     totalDishPrice += dishes[i].ingredients[j].price;
                 }
             }
-            
+
         }
         return totalDishPrice;
     };
@@ -100,6 +116,7 @@ var DinnerModel = function () {
                 this.fullMenu.push(dishes[i]);
             }
         }
+        this.notifyObservers();
     };
 
     //Removes dish from menu
@@ -109,6 +126,7 @@ var DinnerModel = function () {
                 this.fullMenu.splice(i, 1);
             }
         }
+        this.notifyObservers();
     };
 
 
