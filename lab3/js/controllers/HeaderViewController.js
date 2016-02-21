@@ -5,7 +5,6 @@ var HeaderViewController = function (view, model) {
 
 
     $("#edit-dinner-btn").click(function () {
-        console.log("edit dinner dtn")
         $('#meals-view').css('display', 'block');
         $('#select-dish').css('display', 'block');
         $('#panel').css('display', 'block');
@@ -13,6 +12,8 @@ var HeaderViewController = function (view, model) {
         $('#detail-view-container').css('display', 'none');
         $("#header-info-view").css('display', 'none');
         $("#preparations-overview-view").css('display', 'none');
+        $("#full-menu-wrapper").css('display', 'none');
+        $("#overviewView").css('display', 'none');
 
     });
 };

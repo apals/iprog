@@ -9,8 +9,6 @@ var PanelViewController = function (view, model) {
         if (this.value !== value) {
             value = this.value;
             model.setNumberOfGuests(value);
-            console.log("changed number of guests");
-
         }
     });
 
@@ -18,7 +16,6 @@ var PanelViewController = function (view, model) {
     partyname.change(function () {
 
         model.setPartyName(partyname.val());
-        console.log("Name set to " + partyname.val());
     });
 
     $("#confirm-dinner-btn").click(function () {
@@ -29,7 +26,9 @@ var PanelViewController = function (view, model) {
 
 
         $("#header-info-view").css('display', 'block');
-        $("#preparations-overview-view").css('display', 'block');
+        //$("#preparations-overview-view").css('display', 'block');
+        $("#full-menu-wrapper").css('display', 'block');
+        $("#overviewView").css('display', 'block');
 
     });
 };

@@ -10,6 +10,7 @@ $(function () {
     var preparationsView = new PreparationsView($("#preparationsView"), model);
 
     var overviewView = new OverviewView($("#overviewView"), model);
+    var overviewViewController = new OverviewViewController(overviewView, model);
 
     var selectDishView = new SelectDishView($("#selectDishView"), model);
     var selectViewController = new SelectViewController(selectDishView, model);
