@@ -2,6 +2,7 @@
 var IngredientsView = function (container, model) {
 
     var meal = model.getFullMenu()[0];
+    model.addObserver(this);
 
     container.prepend($('<h2>').append("Ingredients for " + model.getNumberOfGuests() + " people"));
 
