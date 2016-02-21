@@ -120,7 +120,7 @@ header span {
 
 #detail-view {
     /*display: inline-block;*/
-    display: none;
+    /*display: none;*/
     height: 100%;
     float: left;
     width: 50%;
@@ -135,7 +135,7 @@ header span {
 
 #ingredientsView {
     /*display: inline-block;*/
-    display: none;
+    /*display: none;*/
     text-align: center;
     width: 50%;
     height: 100%;
@@ -168,6 +168,10 @@ header span {
 
 #preparationsView {
     clear: both;
+   /* display: none;*/
+}
+
+#detail-view-container {
     display: none;
 }
 

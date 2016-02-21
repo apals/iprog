@@ -1,11 +1,12 @@
 //ExampleView Object constructor
 var IngredientsView = function (container, model) {
 
-    var meal = model.getFullMenu()[0];
+
     model.addObserver(this);
 
 
     function setHtml() {
+        var meal = model.getDish(model.getCurrentId());
         var numberOfGuests = model.getNumberOfGuests();
         container.prepend($('<h2>').append("Ingredients for " + numberOfGuests + " people"));
 
@@ -29,10 +30,8 @@ var IngredientsView = function (container, model) {
     }
 
 
-    setHtml();
     this.update = function () {
         container.empty();
         setHtml();
-
     }
 };

@@ -1,7 +1,7 @@
 $(function () {
     //We instantiate our model
     var model = new DinnerModel();
-    model.generateTestParty();
+//    model.generateTestParty();
 
     //And create the needed controllers and views
 

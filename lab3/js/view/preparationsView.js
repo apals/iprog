@@ -1,38 +1,35 @@
 //ExampleView Object constructor
 var PreparationsView = function (container, model) {
 
-    //TODO - For each element in the menu, do its own list of ingreds, as a seperate list
+    model.addObserver(this);
+
     container.prepend($('<h2>').append("Preparations"));
+    function setHtml() {
 
-    var dishDescription = model.getFullMenu();
+
+        var result = model.getDish(model.getCurrentId()).description;
+
+        var prepSteps = result.split(". ");
 
 
-    var result = dishDescription.map(function (a) {
-        return a.description;
-    });
+        var list = $("<ol>");
 
-    var prepSteps = [];
+        for (var i = 0; i < prepSteps.length; i++) {
+            var li = $("<li>");
+            list.append(
+                li.append(prepSteps[i]).attr("href", "#")
+            );
+        }
 
-    for (var i = result.length - 1; i >= 0; i--) {
-        prepSteps.push.apply(prepSteps, result[i].split(". "));
+        container.append(list);
     }
 
 
-    //var prepSteps = ["Do this thing first", "Then do this thing", "Finally pls do this or u suck"];
-    var prepForm = container.find("#prep-form");
-    var list = $("<ol>");
+    this.update = function () {
+        container.empty();
+        setHtml();
+    };
 
-    prepSteps.reverse();
-
-    for (var i = prepSteps.length - 1; i >= 0; i--) {
-        var li = $("<li>");
-        list.append(
-            li.append(prepSteps[i]).attr("href", "#")
-        );
-    }
-
-
-    container.append("This is how to do it:");
-    container.append(list);
+    console.log("preparationsview");
 
 };
