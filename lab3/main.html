@@ -39,11 +39,14 @@
         <div id="select-dish">
             <h1>Select Dish</h1>
         <span id="searchbar">
-			Keywords: <input type="text" style="color:black" placeholder="Search">
+			Keywords: <input id="searchfield" type="text" style="color:black" placeholder="Search">
 		</span>
 		<span id="typeSelector">
 			<select id="types" style="color: #000000">
                 <option>Choose type of dish</option>
+                <option value="starter">Starter</option>
+                <option value="main dish">Main dish</option>
+                <option value="dessert">Desser</option>
             </select>
 		</span>
         </div>
@@ -79,12 +82,9 @@
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 <script src="js/app.js"></script>
 <script src="js/model/dinnerModel.js"></script>
-<script src="js/view/exampleView.js"></script>
-<script src="js/view/newPartyView.js"></script>
 <script src="js/view/ingredientsView.js"></script>
 <script src="js/view/preparationsView.js"></script>
 <script src="js/view/overviewView.js"></script>
-<script src="js/view/previousView.js"></script>
 <script src="js/view/mealsView.js"></script>
 <script src="js/view/selectDishView.js"></script>
 <script src="js/view/panelView.js"></script>
@@ -94,6 +94,7 @@
 
 <script src="js/controllers/PanelViewController.js"></script>
 <script src="js/controllers/MealsViewController.js"></script>
+<script src="js/controllers/SelectViewController.js"></script>
 
 
 </body>

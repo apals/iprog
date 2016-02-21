@@ -12,6 +12,9 @@ var DinnerModel = function () {
     this.fullMenu = [];
     this.nameOfParty = "";
     this.observers = [];
+    this.currentSearch = "";
+    this.inspectedDishId = 1;
+
 
     this.generateTestParty = function () {
         this.numberOfGuests = 8;
@@ -53,6 +56,23 @@ var DinnerModel = function () {
     this.getPartyName = function () {
         return this.nameOfParty;
     };
+
+
+
+    this.setCurrentSearch = function (s) {
+        this.currentSearch = s;
+        this.notifyObservers();
+    };
+
+    this.getCurrentSearch = function () {
+        return this.currentSearch;
+    };
+
+
+
+    /*========= End variable getters and setters =========*/
+
+
 
     //Returns the dish that is on the menu for selected type
     this.getSelectedDish = function (type) {
@@ -128,6 +148,10 @@ var DinnerModel = function () {
         }
         this.notifyObservers();
     };
+
+    this.getCurrentList = function() {
+        return this.getAllDishes(this.currentType, this.currentSearch);
+    }
 
 
     //function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
