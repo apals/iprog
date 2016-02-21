@@ -15,6 +15,7 @@ $(function () {
     var panelViewController = new PanelViewController(panelView, model);
     var previousView = new PreviousView($("#previousparties"));
     var mealsView = new MealsView($("#meals-view"), model);
+    var mealsViewController = new MealsViewController(mealsView, model);
 
     var detailView = new DetailView($("#detail-view"), model);
     var preparationsOverviewView = new PreparationsOverviewView($("#preparations-overview-view"), model);
