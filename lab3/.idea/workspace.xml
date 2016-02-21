@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1697d9a8-2efe-46ee-8891-1ab7ea1e5cd8" name="Default" comment="" />
+    <list default="true" id="1697d9a8-2efe-46ee-8891-1ab7ea1e5cd8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/view/panelView.js" afterPath="$PROJECT_DIR$/js/view/panelView.js" />
+    </list>
     <ignored path="lab3.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,7 +27,7 @@
         <entry file="file://$PROJECT_DIR$/js/view/mealsView.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -34,8 +36,8 @@
       <file leaf-file-name="panelView.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/view/panelView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.58639705">
-              <caret line="34" column="118" selection-start-line="34" selection-start-column="118" selection-end-line="34" selection-end-column="118" />
+            <state vertical-scroll-proportion="0.19301471">
+              <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -559,7 +561,7 @@
     <entry file="file://$PROJECT_DIR$/js/view/mealsView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -622,8 +624,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/view/panelView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58639705">
-          <caret line="34" column="118" selection-start-line="34" selection-start-column="118" selection-end-line="34" selection-end-column="118" />
+        <state vertical-scroll-proportion="0.19301471">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
           <folding />
         </state>
       </provider>
