@@ -8,7 +8,7 @@ var DinnerModel = function () {
 
     //TODO - Add dish to menu is bugged, does not splice correctly
 
-    this.numberOfGuests = 0;
+    this.numberOfGuests = 1;
     this.fullMenu = [];
     this.nameOfParty = "";
     this.observers = [];
