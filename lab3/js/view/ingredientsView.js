@@ -15,6 +15,7 @@ var IngredientsView = function (container, model) {
 
 
     function setHtml() {
+        console.log(model.getCurrentId());
         var meal = model.getDish(model.getCurrentId());
         var numberOfGuests = model.getNumberOfGuests();
 
@@ -22,6 +23,7 @@ var IngredientsView = function (container, model) {
 
 
         table.empty();
+//        console.log(meal);
 
         meal.ingredients.forEach(function (ingredient) {
             var row = $('<tr>');
@@ -31,8 +33,8 @@ var IngredientsView = function (container, model) {
             row.append($('<td>').append(ingredient.price * numberOfGuests));
             table.append(row);
         });
-
-        lastSpan.html(model.getTotalMenuPrice());
+        console.log("dish price: " + model.getDishPrice(model.getCurrentId()));
+        lastSpan.html(model.getDishPrice(model.getCurrentId()) * numberOfGuests);
 
 
     }

@@ -132,7 +132,7 @@ var DinnerModel = function () {
     this.getDishPrice = function (id) {
         var totalDishPrice = 0;
         for (var i = 0; i < dishes.length; i++) {
-            if (dishes[i].id === id) {
+            if (dishes[i].id == id) {
                 for (var j = 0; j < dishes[i].ingredients.length; j++) {
                     totalDishPrice += dishes[i].ingredients[j].price;
                 }

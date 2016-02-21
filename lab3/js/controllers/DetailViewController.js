@@ -16,28 +16,9 @@ var DetailViewController = function (view, model) {
         $('#detail-view-container').css('display', 'none');
 
 
-        setMealClickListener();
+        // setMealClickListener();
     };
     backbtn.click(theClickFunction);
 
-    /**
-     * The display none event removes the click listener on the meals.. this fixes it
-     */
-    function setMealClickListener() {
 
-        var meal = $('.meal-container');
-        meal.click(function () {
-            $("#meals-view").css('display', 'none');
-            $('#select-dish').css('display', 'none');
-
-
-            /*$('#detail-view').addClass("active-inline-block");
-             $('#ingredientsView').addClass("active-inline-block");
-             $('#preparationsView').addClass("active-inline-block");*/
-            $('#detail-view-container').css('display', 'block');
-            model.setCurrentId($(this).attr("meal-id"));
-
-        });
-
-    }
 };
