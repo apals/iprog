@@ -1,0 +1,238 @@
+@font-face {
+    font-family: Sketch;
+    src: url('fonts/SketchRockwell-Bold.ttf');
+}
+
+@font-face {
+    font-family: Polo;
+    src: url('fonts/Polo-Brush.ttf');
+}
+
+hr {
+    border-color: black;
+}
+
+body {
+    background: #D6F9ED;
+}
+
+.container {
+    background: #A6F9ED;
+}
+
+.left {
+    float: left;
+}
+
+h6 {
+    margin-top: 0;
+}
+
+#panel > * {
+    max-width: 100%;
+}
+
+#panel input {
+    max-width: 100%;
+    color: black;
+}
+
+button {
+    font-family: Polo;
+    font-size: 18px;
+    opacity: 0.8;
+    color: white;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: #123456;
+}
+
+header {
+    background: #3388BB;
+    padding: 2rem;
+    border-style: solid;
+    border-color: lightblue;
+    border-width: 0 0 2px 0;
+    text-align: right;
+    padding: 5px 1% 5px 20%;
+    color: black;
+
+}
+
+#panel {
+    background: #44AAFF;
+    width: 200px;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+#select-dish {
+    padding: 5px 0 5px 7%;
+    background: #88CCFF;
+    overflow: hidden;
+    border-style: solid;
+    border-color: lightblue;
+    border-width: 0 0 2px 0;
+    text-align: center;
+    color: black;
+}
+
+#meals-view {
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+#dish-in-view {
+    /* margin: 40% 40px 0 40px;*/
+}
+
+#meals-view div {
+    padding: 1rem;
+    display: inline-block;
+}
+
+#meals-view div p {
+    text-align: center;
+    font-family: Polo;
+    font-size: 18px;
+    color: #FFFFFF;
+
+}
+
+header h1 {
+    text-transform: uppercase;
+    font-size: 40px;
+    margin: auto;
+    padding: 2rem 2rem;
+    display: inline;
+    font-family: Sketch;
+}
+
+header span {
+    font-family: Polo;
+    margin: auto;
+    padding: 2rem 2rem;
+}
+
+#detail-view {
+    display: inline-block;
+    height: 100%;
+    float: left;
+    width: 50%;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+#detail-view img {
+    width: 70%;
+    height: 70%;
+}
+
+#ingredientsView {
+    display: inline-block;
+    text-align: center;
+    width: 50%;
+    height: 100%;
+    padding: 0 2rem;
+}
+
+#ingredients-form {
+    width: 100%;
+    height: 100%;
+}
+
+#super-wrapper {
+    float: left;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.inner-site-wrapper {
+    padding-left: 200px;
+}
+
+.clearfix:after {
+    content: " "; /* Older browser do not support empty content */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+#preparationsView {
+    clear: both;
+}
+
+#preparations-overview-view {
+    padding: 1rem;
+    margin: 0;
+    width: 100%;
+}
+
+.right {
+    float: right;
+}
+
+.top-container > * {
+    margin: 10px;
+}
+
+.top-container {
+    padding: 5px 20% 5px 20%;
+    background: #88CCFF;
+    overflow: auto;
+    border-style: solid;
+    border-color: lightblue;
+    border-width: 0 0 2px 0;
+}
+
+.full-menu-wrapper {
+    clear: both;
+    text-align: center;
+    height: 100%;
+}
+
+.meal {
+    height: auto;
+    width: 20%;
+    padding: 2rem;
+    display: inline-block;
+}
+
+.meal img {
+    width: 100%;
+    height: 100%;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.meal-preparation {
+    width: 100%;
+    margin: 0;
+}
+
+.meal-preparation img {
+    width: 20%;
+    height: 20%;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+.small-text {
+    font-size: 14px !important;
+}
+
+#ingredients-table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}

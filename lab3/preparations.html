@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dinner planner</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div class="container">
+    <!-- tabs left -->
+    <div class="tabbable">
+        <ul class="nav nav-pills nav-stacked col-md-3">
+            <li class="active"><a href="#createparty" data-toggle="tab">New Party</a></li>
+            <li><a href="#previousparties" data-toggle="tab">Parties</a></li>
+        </ul>
+        <div class="tab-content col-md-9">
+
+            <div class="container">
+                <div class="jumbotron">
+                    <h1>Preparation</h1>
+            </div>
+
+            <div class="tab-pane active" id="preparationsView">
+                <span id="prep-form">
+                    
+                </span>
+
+                </form>
+
+
+                <div>
+                <button style="float: left;display: inline-block" class="btn btn-primary" type="button">Previous</button>
+                <button style="float: left; display: inline-block" class="btn btn-primary" type="button">Next</button>
+            </div>
+
+
+            <div class="tab-pane" id="previousparties">
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- /tabs -->
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+<!-- The application JavaScript code -->
+<script src="js/app.js"></script>
+<script src="js/model/dinnerModel.js"></script>
+<script src="js/view/newPartyView.js"></script>
+<script src="js/view/ingredientsView.js"></script>
+<script src="js/view/preparationsView.js"></script>
+<script src="js/view/overviewView.js"></script>
+<script src="js/view/previousView.js"></script>
+
+<script src="js/view/exampleView.js"></script>
+</body>
+</html>
