@@ -246,3 +246,14 @@ h3 {
     margin-right: auto;
     width: 100%;
 }
+
+.overlay {
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    overflow: auto;
+    top: 0px;
+    left: 0px;
+    background: rgba(255, 255, 255, 0.7); /*can be anything, of course*/
+}
