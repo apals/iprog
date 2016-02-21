@@ -18,7 +18,7 @@ var PreparationsOverviewView = function (container, model) {
         var prepColumn = $('<div>').addClass("col-md-4");
         prepColumn.append($('<h3>').append("Preparations"));
         prepColumn.append($('<p>').append(meal.description));
-        row.append(prepColumn)
+        row.append(prepColumn);
 
         container.append(row);
 

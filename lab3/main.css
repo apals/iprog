@@ -191,7 +191,7 @@ header span {
     border-width: 0 0 2px 0;
 }
 
-.full-menu-wrapper {
+#full-menu-wrapper {
     clear: both;
     text-align: center;
     height: 100%;
