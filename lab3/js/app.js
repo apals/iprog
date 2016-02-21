@@ -12,6 +12,7 @@ $(function () {
     var overviewView = new OverviewView($("#overviewView"), model);
     var selectDishView = new SelectDishView($("#selectDishView"), model);
     var panelView = new PanelView($("#panel"), model);
+    var panelViewController = new PanelViewController(panelView, model);
     var previousView = new PreviousView($("#previousparties"));
     var mealsView = new MealsView($("#meals-view"), model);
 

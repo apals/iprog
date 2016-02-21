@@ -4,11 +4,13 @@
 //IngredientsViewController Object constructor
 var PanelViewController = function(view, model ) {
 
-    view.plusButton.click(function(){
-        model.setNumberOfGuests(model.getNumberOfGuests() + 1);
-    });
+    var value = $("#number-of-guests-input").val();
+    $("#number-of-guests-input").on('keyup change click', function () {
+        if(this.value !== value) {
+            value = this.value;
+            model.setNumberOfGuests(value);
+            console.log("changed number of guests");
 
-    view.minusButton.click(function(){
-        model.setNumberOfGuests(model.getNumberOfGuests() - 1);
+        }
     });
 };
