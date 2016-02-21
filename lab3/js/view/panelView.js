@@ -10,9 +10,11 @@ var PanelView = function (container, model) {
 
     container.append($("<h3>").attr("id", "paneltitle"));
     container.append($("<hr>"));
+    container.append($("<h5>").append("Name of party"))
     container.append($('<input>').attr("type", "text").attr("id", "name-of-party-input").attr("placeholder", "Party name"));
     container.append($("<hr>"));
-    container.append($('<input>').attr("type", "number").attr("id", "number-of-guests-input").attr("placeholder", "Guests").attr("value", "0").attr("min", "1"));
+    container.append($("<h5>").append("Number of guests"))
+    container.append($('<input>').attr("type", "number").attr("id", "number-of-guests-input").attr("placeholder", "Guests").attr("value", "1").attr("min", "1"));
     container.append($("<hr>"));
     container.append($("<h4>").append("Dish Name - Cost"));
     container.append($("<div>").attr("id", "dish-and-cost"));
