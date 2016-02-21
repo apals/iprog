@@ -7,8 +7,8 @@ var SelectViewController = function(view, model ) {
 	var searchbar = $("#searchfield");
 	searchbar.change(function() {
 
-		model.setCurrentSearch(searchbar.value);
-		console.log("You searched for  " + searchbar.value);
+		model.setCurrentSearch(searchbar.val());
+		console.log("You searched for  " + searchbar.val());
 	});
 
 

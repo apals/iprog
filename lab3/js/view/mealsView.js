@@ -10,6 +10,8 @@ var MealsView = function (container, model) {
         availableMenus.push.apply(availableMenus, availableMenus2);
         availableMenus.push.apply(availableMenus, availableMenus3);
 
+        availableMenus = model.getCurrentList();
+
 
         var row;
         for (var i = 0; i < availableMenus.length; i++) {
