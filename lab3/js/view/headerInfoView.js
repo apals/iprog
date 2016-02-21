@@ -13,7 +13,7 @@ var HeaderInfoView = function (container, model) {
     	container.append($('<button>').addClass("right").append("Go back and edit dinner"))
 	}
     
-    this.update function () {
+    this.update = function() {
     	container.empty();
     	setHtml();
     }
