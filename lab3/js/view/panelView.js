@@ -6,7 +6,7 @@
 var PanelView = function (container, model) {
 
     container.append($("<h6>").attr("id", "paneltitle"));
-    container.append($('<input>').attr("type", "number").attr("placeholder", "Guests").attr("value", "1"));
+    container.append($('<input>').attr("type", "number").attr("id", "number-of-guests-input").attr("placeholder", "Guests").attr("value", "1"));
     container.append($("<hr>"));
     container.append($("<h4>").append("Dish Name - Cost"));
     container.append($("<div>").attr("id", "dish-and-cost"));

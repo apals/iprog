@@ -2,13 +2,15 @@
  * Created by apals on 21/02/16.
  */
 //IngredientsViewController Object constructor
-var PanelViewContoller = function(view, model ) {
+var PanelViewController = function(view, model ) {
 
-    view.plusButton.click(function(){
-        model.setNumberOfGuests(model.getNumberOfGuests() + 1);
-    });
+    var value = $("#number-of-guests-input").val();
+    $("#number-of-guests-input").on('keyup change click', function () {
+        if(this.value !== value) {
+            value = this.value;
+            model.setNumberOfGuests(value);
+            console.log("changed number of guests");
 
-    view.minusButton.click(function(){
-        model.setNumberOfGuests(model.getNumberOfGuests() - 1);
+        }
     });
 };
