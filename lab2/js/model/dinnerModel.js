@@ -18,7 +18,7 @@ var DinnerModel = function () {
         this.addDishToMenu(1);
         this.addDishToMenu(100);
         this.addDishToMenu(200);
-    }
+    };
 
     this.setNumberOfGuests = function (num) {
         this.numberOfGuests = num;

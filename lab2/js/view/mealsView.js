@@ -1,14 +1,29 @@
 
 var MealsView = function (container, model) {
 
-    var availableMenus = model.getFullMenu();
+    var availableMenus = model.getAllDishes("starter");
+    var availableMenus2 = model.getAllDishes("main dish");
+    var availableMenus3 = model.getAllDishes("dessert");
 
 
+
+    availableMenus.push.apply(availableMenus, availableMenus2);
+    availableMenus.push.apply(availableMenus, availableMenus3);
+
+
+    var row;
     for (var i = 0; i < availableMenus.length; i++) {
-        var div = $('<div>');
+
+        if(i % 3 === 0) {
+            row = $('<div>').addClass("row");
+            container.append(row);
+        }
+        var div = $('<div>').addClass("col-md-4");
         div.append($('<img>').attr('src', 'images/' + availableMenus[i].image +'').attr('id', 'dish-in-view'));
         div.append($('<p>').append(availableMenus[i].name));
-        container.append(div);
+        div.append($('<p>').addClass("small-text").append(availableMenus[i].description));
+        div.appendTo(row);
+
     }
 
 };
