@@ -17,7 +17,7 @@ var MealsView = function (container, model) {
                 row = $('<div>').addClass("row");
                 container.append(row);
             }
-            var div = $('<div>').addClass("col-md-4");
+            var div = $('<div>').addClass("col-md-4").addClass("meal-container");
             div.append($('<img>').attr('src', 'images/' + availableMenus[i].image + '').attr('id', 'dish-in-view'));
             div.append($('<p>').append(availableMenus[i].name));
             div.append($('<p>').addClass("small-text").append(availableMenus[i].description));
