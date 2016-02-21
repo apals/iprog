@@ -4,14 +4,14 @@
 //IngredientsViewController Object constructor
 var MealsViewController = function (view, model) {
 
-    var meal = $('.meal-container');
-    meal.click(function () {
+    //var meal = $('.meal-container');
+    $('#meals-view').on('click', 'img', function() {
 
         $("#meals-view").css('display', 'none');
         $('#select-dish').css('display', 'none');
         $('#detail-view-container').css('display', 'block');
 
-        model.setCurrentId($(this).attr("meal-id"));
-
+        var num = $(this).parent().attr("meal-id");
+        model.setCurrentId(num);
     });
 };
