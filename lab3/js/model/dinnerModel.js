@@ -13,6 +13,7 @@ var DinnerModel = function () {
     this.nameOfParty = "";
     this.observers = [];
     this.currentSearch = "";
+    this.currentType = "";
     this.inspectedDishId = 1;
     this.currentId = 0;
 
@@ -43,7 +44,7 @@ var DinnerModel = function () {
         this.notifyObservers();
     };
 
-    this.getCurrentId = function() {
+    this.getCurrentId = function () {
         return this.currentId;
     };
 
@@ -76,6 +77,16 @@ var DinnerModel = function () {
     this.getCurrentSearch = function () {
         return this.currentSearch;
     };
+
+
+    this.setType = function (type) {
+        this.currentType = type;
+        this.notifyObservers();
+    }
+
+    this.getType = function () {
+        return this.currentType;
+    }
 
 
     /*========= End variable getters and setters =========*/
