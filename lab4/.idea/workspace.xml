@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2758b9d0-bebd-43da-889b-1c095e8de0e9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab3/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../lab3/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="2758b9d0-bebd-43da-889b-1c095e8de0e9" name="Default" comment="" />
     <ignored path="lab4.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
