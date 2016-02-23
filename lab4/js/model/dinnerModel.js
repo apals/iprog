@@ -7,6 +7,7 @@ var DinnerModel = function () {
     // and selected dinner options for dinner menu
 
     //TODO - Add dish to menu is bugged, does not splice correctly
+    const URL = "http://api.bigoven.com/recipes?api_key=18f3cT02U9f6yRl3OKDpP8NA537kxYKu&pg=1&rpp=10";
 
     this.numberOfGuests = 1;
     this.fullMenu = [];
@@ -180,13 +181,34 @@ var DinnerModel = function () {
 
     this.getCurrentList = function () {
         return this.getAllDishes(this.currentType, this.currentSearch);
-    }
+    };
 
 
     //function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
     //you can use the filter argument to filter out the dish by name or ingredient (use for search)
     //if you don't pass any filter all the dishes will be returned
+    function doGet(url) {
+
+        var xmlhttp = new XMLHttpRequest();
+
+        console.log("Get alld ishes");
+
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                console.log(xmlhttp.responseText);
+                console.log("yeah got some Data");
+
+            }
+        };
+        xmlhttp.open("GET", url, true);
+        xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xmlhttp.send();
+    }
+
     this.getAllDishes = function (type, filter) {
+
+        doGet(URL);
+
         return $(dishes).filter(function (index, dish) {
             var found = true;
             if (filter) {
