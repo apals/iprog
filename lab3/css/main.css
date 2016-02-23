@@ -47,6 +47,38 @@ button {
     background-color: #123456;
 }
 
+#delete-dish-btn {
+    font-family: Polo;
+    font-size: 18px;
+    color: red !important;
+    width: 30px !important;
+    height: 30px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    padding-top: 5%
+
+    margin-top: -10px;
+
+    background-color: Transparent !important;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none; 
+}
+
+
+#dish-div {
+    width: 135px;
+    float: left;
+}
+
+#btn-div {
+    width: 35px;
+    float: left;
+}
+
+
 header {
     background: #3388BB;
     padding: 2rem;
@@ -180,6 +212,7 @@ header span {
     padding: 1rem;
     margin: 0;
     width: 100%;
+    margin-right: 15%;
 }
 
 .right {
@@ -191,13 +224,14 @@ header span {
 }
 
 .top-container {
-    padding: 5px 20% 5px 20%;
+    padding: 5px auto 5px auto;
     background: #88CCFF;
     overflow: auto;
     border-style: solid;
     border-color: lightblue;
     border-width: 0 0 2px 0;
     display: none;
+    margin-right: 15%;
 }
 
 #full-menu-wrapper {
@@ -205,6 +239,7 @@ header span {
     text-align: center;
     height: 100%;
     display: none;
+    margin-right: 15%;
 }
 
 .meal {
@@ -255,7 +290,7 @@ h3 {
     overflow: auto;
     top: 0px;
     left: 0px;
-    background: rgba(150, 150, 150, 0.7); /*can be anything, of course*/
+    background: rgba(30, 30, 30, 0.15); /*can be anything, of course*/
 }
 
 #overviewView {

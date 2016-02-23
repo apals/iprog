@@ -171,8 +171,10 @@ var DinnerModel = function () {
     //Removes dish from menu
     this.removeDishFromMenu = function (id) {
         for (var i = 0; i < this.fullMenu.length; i++) {
-            if (this.fullMenu[i].id === id.id) {
+            console.log("curr ID: " + this.fullMenu[i].id)
+            if (this.fullMenu[i].id == id) {
                 this.fullMenu.splice(i, 1);
+                
             }
         }
         this.notifyObservers();

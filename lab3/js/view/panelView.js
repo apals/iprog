@@ -21,6 +21,7 @@ var PanelView = function (container, model) {
 
 
     var partytitle = $('#paneltitle');
+    
 
     setHtml();
 
@@ -31,7 +32,14 @@ var PanelView = function (container, model) {
 
 
         for (var i = menu.length - 1; i >= 0; i--) {
-            $("#dish-and-cost").append(menu[i].name + " - " + model.getDishPrice(menu[i].id) * model.getNumberOfGuests() + " kr").append("<br>");
+            var dishdiv = $("<div>").attr("id", "dish-div");
+            dishdiv.append(menu[i].name + " - " + model.getDishPrice(menu[i].id) * model.getNumberOfGuests() + " kr");
+
+            var btndiv = $("<div>").attr("id", "btn-div");
+            btndiv.append($('<button>').attr("id", "delete-dish-btn").append(" X ").attr("value", menu[i].id));
+            $("#dish-and-cost").append(dishdiv)
+            $("#dish-and-cost").append(btndiv)
+            $("#dish-and-cost").append("<br><br>");
         }
 
         $("#dish-and-cost").append("<br><br>Total menu cost: " + model.getTotalMenuPrice() * model.getNumberOfGuests() + "kr.");

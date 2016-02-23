@@ -12,6 +12,12 @@ var PanelViewController = function (view, model) {
         }
     });
 
+    $('body').on('click', '#delete-dish-btn', function() {
+        model.removeDishFromMenu($(this).attr("value"));
+        console.log("Remove dish with id: " + $(this).attr("value"))
+    });
+
+
     var partyname = $("#name-of-party-input");
     partyname.change(function () {
 
