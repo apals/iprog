@@ -7,12 +7,13 @@ var DinnerModel = function () {
     // and selected dinner options for dinner menu
 
     //TODO - Add dish to menu is bugged, does not splice correctly
-    const URL = "http://api.bigoven.com/recipes?api_key=18f3cT02U9f6yRl3OKDpP8NA537kxYKu&pg=1&rpp=10";
+    const URL = "http://api.bigoven.com";
+    const api_key = "?api_key=18f3cT02U9f6yRl3OKDpP8NA537kxYKu&pg=1&rpp=10";
 
     this.numberOfGuests = 1;
     this.fullMenu = [];
     this.nameOfParty = "";
-    this.observers = [];
+    var observers = [];
     this.currentSearch = "";
     this.currentType = "";
     this.inspectedDishId = 1;
@@ -31,18 +32,27 @@ var DinnerModel = function () {
      Observable implementation
      *****************************************/
     this.addObserver = function (observer) {
-        this.observers.push(observer);
+        observers.push(observer);
     };
 
-    this.notifyObservers = function () {
-        for (var i = 0; i < this.observers.length; i++) {
-            this.observers[i].update();
+    function createCallback(x, m) {
+        return function () {
+            console.log("notifying");
+            for (var i = 0; i < observers.length; i++) {
+                observers[i].update();
+            }
+        };
+    }
+
+    var notifyObservers = function (data) {
+        for (var i = 0; i < observers.length; i++) {
+            observers[i].update(data);
         }
     };
 
     this.setCurrentId = function (num) {
         this.currentId = num;
-        this.notifyObservers();
+        notifyObservers();
     };
 
     this.getCurrentId = function () {
@@ -51,7 +61,7 @@ var DinnerModel = function () {
 
     this.setNumberOfGuests = function (num) {
         this.numberOfGuests = num;
-        this.notifyObservers();
+        notifyObservers();
     };
 
     // should return
@@ -62,7 +72,7 @@ var DinnerModel = function () {
 
     this.setPartyName = function (name) {
         this.nameOfParty = name;
-        this.notifyObservers();
+        notifyObservers();
     };
 
     this.getPartyName = function () {
@@ -72,7 +82,7 @@ var DinnerModel = function () {
 
     this.setCurrentSearch = function (s) {
         this.currentSearch = s;
-        this.notifyObservers();
+        notifyObservers();
     };
 
     this.getCurrentSearch = function () {
@@ -82,7 +92,7 @@ var DinnerModel = function () {
 
     this.setType = function (type) {
         this.currentType = type;
-        this.notifyObservers();
+        notifyObservers();
     }
 
     this.getType = function () {
@@ -166,7 +176,7 @@ var DinnerModel = function () {
         //add the new one
         this.fullMenu.push(dish);
 
-        this.notifyObservers();
+        notifyObservers();
     };
 
     //Removes dish from menu
@@ -176,7 +186,7 @@ var DinnerModel = function () {
                 this.fullMenu.splice(i, 1);
             }
         }
-        this.notifyObservers();
+        notifyObservers();
     };
 
     this.getCurrentList = function () {
@@ -184,30 +194,38 @@ var DinnerModel = function () {
     };
 
 
-    //function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
-    //you can use the filter argument to filter out the dish by name or ingredient (use for search)
-    //if you don't pass any filter all the dishes will be returned
     function doGet(url) {
+
+        console.log("Getting form url " + url);
 
         var xmlhttp = new XMLHttpRequest();
 
         console.log("Get alld ishes");
 
-        xmlhttp.onreadystatechange = function () {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                console.log(xmlhttp.responseText);
-                console.log("yeah got some Data");
 
+        xmlhttp.onreadystatechange = (function (x) {
+            return function () {
+                console.log("yeah");
+                if (x.readyState == 4 && x.status == 200) {
+                    //console.log(x.responseText);
+                    console.log("yeah got some Data");
+                    var json = JSON.parse(x.responseText);
+                    notifyObservers();
+                }
             }
-        };
-        xmlhttp.open("GET", url, true);
+        })(xmlhttp);
+
+        xmlhttp.open("GET", url + api_key, true);
         xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         xmlhttp.send();
     }
 
+    //function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
+    //you can use the filter argument to filter out the dish by name or ingredient (use for search)
+    //if you don't pass any filter all the dishes will be returned
     this.getAllDishes = function (type, filter) {
 
-        doGet(URL);
+        doGet(URL + "/recipes" + api_key);
 
         return $(dishes).filter(function (index, dish) {
             var found = true;
@@ -228,6 +246,10 @@ var DinnerModel = function () {
 
     //function that returns a dish of specific ID
     this.getDish = function (id) {
+
+        doGet(URL + "/recipe/" + id + api_key);
+
+
         var key;
         for (key in dishes) {
             if (dishes[key].id == id) {
