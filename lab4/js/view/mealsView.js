@@ -44,7 +44,7 @@ var MealsView = function (container, model) {
     setHtml();
 
     this.update = function (data) {
-        container.empty();
+        //container.empty();
         setHtml(data);
     };
 
