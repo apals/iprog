@@ -13,7 +13,7 @@ var DinnerModel = function () {
     this.nameOfParty = "";
 
     this.generateTestParty = function () {
-        this.numberOfGuests = 8;
+        this.numberOfGuests = 5657;
         this.nameOfParty = "Elite Dinner";
         this.addDishToMenu(1);
         this.addDishToMenu(100);

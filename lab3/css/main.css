@@ -81,7 +81,6 @@ button {
 
 header {
     background: #3388BB;
-    padding: 2rem;
     border-style: solid;
     border-color: lightblue;
     border-width: 0 0 2px 0;
@@ -166,12 +165,10 @@ header span {
 }
 
 #ingredientsView {
-    /*display: inline-block;*/
-    /*display: none;*/
     text-align: center;
     width: 50%;
     height: 100%;
-    padding: 0 2rem;
+    padding: 0 1rem;
 }
 
 #ingredients-form {
@@ -186,7 +183,7 @@ header span {
     max-width: 100%;
 }
 
-.inner-site-wrapper {
+#inner-site-wrapper {
     padding-left: 200px;
 }
 
@@ -278,7 +275,7 @@ h3 {
 
 #ingredients-table {
     margin-left: auto;
-    margin-right: auto;
+    margin-right: 10%;
     width: 100%;
 }
 
