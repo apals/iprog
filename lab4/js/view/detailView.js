@@ -11,10 +11,11 @@ var DetailView = function (container, model) {
     var img = $('<img>');
     var p = $('<p>').addClass("small-text");
 
+    container.append($('<button>').attr("id", "back-to-select-dish-btn").append("Back to 'Select dish'"));
     container.append(h2);
     container.append(img);
     container.append(p);
-    container.append($('<button>').attr("id", "back-to-select-dish-btn").append("Back to select dish"));
+   
 
     function setHtml(data) {
         if(!data || !data.RecipeID) return;

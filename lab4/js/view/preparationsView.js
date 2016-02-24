@@ -25,6 +25,7 @@ var PreparationsView = function (container, model) {
         }
 
         container.append(list);
+
     }
 
 

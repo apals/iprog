@@ -18,7 +18,15 @@ a:active {color:#000000;}
 /* BODY AND HTML*/
 body, html {
     background: #D6F9ED;
-    height: 100%;
+    height: 100vh;
+    width: 100vh;
+}
+
+.inner-site-wrapper {
+    overflow: scroll;
+    margin-bottom: 5%;
+    height: 90vh;
+    width: 100vw;
 }
 
 /* HEADER */
@@ -50,14 +58,13 @@ header span {
 }
 
 
-
 /*=== PANEL ===*/
 
 #panel {
     background: #44AAFF;
-    float: left;
-    height: 100vh;
-    width: 15%;
+    width: 200px;
+    position: absolute;
+    height: 100%;
     padding-left: 1%;
     padding-right: 1%;
 }
@@ -89,6 +96,8 @@ header span {
 
 #meals-view {
     height: 75vh;
+    margin-left: 200px;
+
     overflow-y: auto;
     overflow-x: auto;
     text-align: center;
@@ -104,6 +113,7 @@ header span {
     font-size: 18px;
     color: #FFFFFF;
 
+
 }
 
 #dish-in-view {
@@ -114,18 +124,17 @@ header span {
 
 /*=== DETAIL VIEW ===*/
 #detail-view {
-    height: 100%;
     float: left;
     width: 35vw;
     text-align: center;
     padding: 0 2rem;
-
-    overflow-y: auto;
-    overflow-x: hidden;
 }
 
 #detail-view-container {
     display: none;
+    margin-left: 200px;
+    padding-left: 5%;
+    width: 80vw;
 }
 
 #detail-view img {
@@ -137,22 +146,12 @@ header span {
 /*=== INGREDIENTS VIEW ===*/
 #ingredientsView {
     text-align: center;
-    width: 35vw;
-    height: 100%;
+    width: 35%;
     padding: 0 2rem;
-
-    overflow-y: auto;
-    overflow-x: hidden;
 }
 
-#ingredients-form {
-    width: 100%;
-    height: 100%;
-}
 
 #ingredients-table {
-    margin-left: auto;
-    margin-right: auto;
     width: 100%;
 }
 
@@ -161,6 +160,12 @@ header span {
 /*=== PREPARATIONS VIEW ===*/
 #preparationsView {
     clear: both;
+    width: 70%;
+    height: 50px;
+    padding-left: 20%;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+
 }
 
 
@@ -175,7 +180,7 @@ header span {
 #full-menu-wrapper {
     clear: both;
     text-align: center;
-    height: 100%;
+/*    height: 100%;*/
     display: none;
 }
 
@@ -241,10 +246,21 @@ button {
     background-color: #123456;
 }
 
+#confirm-dish-btn {
+    margin-top: 15px;
+    width: 300px;
+}
+
+#back-to-select-dish-btn {
+    margin-top: 15px;
+    width: 300px;
+}
 
 
 
 /*=== GLOBALLY USED CLASSES ===*/
+
+
 
 .right {
     float: right;
@@ -275,11 +291,11 @@ button {
     background: rgba(150, 150, 150, 0.7); /*can be anything, of course*/
 }
 
-/*.clearfix:after {
+.clearfix:after {
     content: " "; 
     visibility: hidden;
     display: block;
     height: 0;
     clear: both;
-}*/
+}
 

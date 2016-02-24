@@ -46,8 +46,8 @@ var IngredientsView = function (container, model) {
     }
 
     container.append($('<hr>'));
-    var button = $('<button>').append("Confirm").attr("id", "confirm-dish-btn");
-    container.append(button);
+    var button = $('<button>').append("Add dish to menu").attr("id", "confirm-dish-btn");
+    container.prepend(button);
     container.append(lastSpan);
 
 
