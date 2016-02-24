@@ -17,6 +17,7 @@ var MealsView = function (container, model) {
 
         availableMenus = data.Results;
 
+        container.empty();
 
         var row;
         for (var i = 0; i < availableMenus.length; i++) {

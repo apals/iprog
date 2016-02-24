@@ -11,6 +11,7 @@ var OverviewView = function (container, model) {
 
     function setHtml(data) {
 
+
         var menu = model.getFullMenu();
         //var partytitle = $('#partytitle').append("\"" + model.getPartyName() + "\" set for " + model.getNumberOfGuests() + " people");
 
@@ -30,7 +31,7 @@ var OverviewView = function (container, model) {
     container.append($('<div>').addClass("align-center").append(button));
 
     this.update = function (data) {
-        //$('#full-menu-wrapper').empty();
+        $('#full-menu-wrapper').empty();
         setHtml(data);
     };
 
