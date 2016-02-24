@@ -148,28 +148,33 @@ var DinnerModel = function () {
     //Adds the passed dish to the menu. If the dish of that type already exists on the menu
     //it is removed from the menu and the new one added.
     this.addDishToMenu = function (id) {
-        console.log("Add dish to menu with id : " + id);
+        //console.log("Add dish to menu with id : " + id);
         var type;
 
         var xmlhttp = new XMLHttpRequest();
 
-        console.log("Get alld ishes");
+        //console.log("Get alld ishes");
 
 
         xmlhttp.onreadystatechange = (function (x, menu) {
             return function () {
                 console.log("yeah");
                 if (x.readyState == 4 && x.status == 200) {
+
+                    var dish = JSON.parse(x.responseText);
+
+
                     for (var i = 0; i < menu.length; i++) {
-                        if (menu[i].type === type) {
+                        if (menu[i].Category === dish.Category) {
                             //remove
                             menu.splice(i, 1);
                         }
                     }
 
                     //add the new one
-                    menu.push(JSON.parse(x.responseText));
-                    console.log(JSON.parse(x.responseText));
+                    menu.push(dish);
+                    console.log("Added new things to menu: " );
+                    console.log(menu);
 
                     notifyObservers(JSON.parse(x.responseText));
                 }
@@ -208,7 +213,6 @@ var DinnerModel = function () {
 
         xmlhttp.onreadystatechange = (function (x) {
             return function () {
-                console.log("yeah");
                 if (x.readyState == 4 && x.status == 200) {
                     //console.log(x.responseText);
                     var json = JSON.parse(x.responseText);
