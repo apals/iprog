@@ -26,11 +26,6 @@ var PanelView = function (container, model) {
 
     function setHtml(data) {
 
-        console.log(data);
-        if (!data) return;
-
-        console.log(data);
-
         $("#dish-and-cost").empty();
         var menu = model.getFullMenu();
         partytitle.html(model.getPartyName()); // + "\" set for " + model.getNumberOfGuests() + " people");

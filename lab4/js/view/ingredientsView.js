@@ -14,33 +14,35 @@ var IngredientsView = function (container, model) {
     setHtml();
 
 
-    function setHtml(data) {
-        if(!data || !data.RecipeID) return;
 
+    function setHtml(data) {
+
+        if (!data || (!data.RecipeID && !data.newGuests)) return;
 
 
         var meal = data;
         var numberOfGuests = model.getNumberOfGuests();
 
 
-
-        h2.html("Ingredients for " + numberOfGuests + " people");
-
-
-        table.empty();
+        if (data.newGuests) {
+            h2.html("Ingredients for " + data.newGuests + " people");
+        } else {
 
 
-        meal.Ingredients.forEach(function (ingredient) {
-            var row = $('<tr>');
-            row.append($('<td>').append(ingredient.DisplayQuantity * numberOfGuests));
-            row.append($('<td>').append(ingredient.MetricUnit));
-            row.append($('<td>').append(ingredient.Name));
-            row.append($('<td>').append(1 * numberOfGuests));
-            table.append(row);
-        });
-        lastSpan.html(model.getDishPrice(model.getCurrentId()) * numberOfGuests);
+            table.empty();
 
 
+            meal.Ingredients.forEach(function (ingredient) {
+                var row = $('<tr>');
+                row.append($('<td>').append(ingredient.DisplayQuantity * numberOfGuests));
+                row.append($('<td>').append(ingredient.MetricUnit));
+                row.append($('<td>').append(ingredient.Name));
+                row.append($('<td>').append(1 * numberOfGuests));
+                table.append(row);
+            });
+            lastSpan.html(model.getDishPrice(model.getCurrentId()) * numberOfGuests);
+
+        }
     }
 
     container.append($('<hr>'));

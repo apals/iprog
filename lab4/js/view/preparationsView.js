@@ -6,6 +6,8 @@ var PreparationsView = function (container, model) {
     container.prepend($('<h2>').append("Preparations"));
     function setHtml(data) {
 
+        console.log(data);
+
         if(!data || !data.RecipeID) return;
 
         console.log(data);
@@ -29,7 +31,7 @@ var PreparationsView = function (container, model) {
 
 
     this.update = function (data) {
-        container.empty();
+        //container.empty();
         setHtml(data);
     };
 
