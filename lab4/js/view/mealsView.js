@@ -13,11 +13,14 @@ var MealsView = function (container, model) {
 
         if(!data || !data.Results) return;
 
-        console.log("Setting smealsvis data");
+        console.log("Setting mealsview data. Data is as follows: ");
+        console.log(data);
 
         availableMenus = data.Results;
 
         container.empty();
+
+
 
         var row;
         for (var i = 0; i < availableMenus.length; i++) {
@@ -26,10 +29,11 @@ var MealsView = function (container, model) {
                 row = $('<div>').addClass("row");
                 container.append(row);
             }
+
             var id = availableMenus[i].id;
 
             var div = $('<div>').addClass("col-md-4").addClass("meal-container");
-            var img = $('<img>').attr('src', 'images/bakedbrie.jpg').attr('id', 'dish-in-view');
+            var img = $('<img>').attr('src', availableMenus[i].ImageURL).attr('id', 'dish-in-view');
 
 
             div.attr("meal-id", availableMenus[i].RecipeID);

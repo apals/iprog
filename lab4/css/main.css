@@ -104,6 +104,11 @@ header {
 
 }
 
+#dish-in-view {
+    width: 175px;
+    height: 175px;
+}
+
 header h1 {
     text-transform: uppercase;
     font-size: 40px;

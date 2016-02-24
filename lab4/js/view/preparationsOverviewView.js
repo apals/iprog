@@ -5,12 +5,12 @@ var PreparationsOverviewView = function (container, model) {
     model.addObserver(this);
     function setHtml(data) {
         var fullMenu = model.getFullMenu();
-        console.log(fullMenu);
 
         fullMenu.forEach(function(meal) {
-            console.log(meal);
             var row = $('<div>').addClass("meal-preparation").addClass("row");
-            row.append($('<img>').attr('src', 'images/bakedbrie.jpg').addClass("col-md-4"));
+
+
+            row.append($('<img>').attr('src', meal.ImageURL).addClass("col-md-4"));
 
 
             var middleColumn = $('<div>').addClass("col-md-4");

@@ -6,7 +6,6 @@ var DinnerModel = function () {
     //TODO Lab 2 implement the data structure that will hold number of guest
     // and selected dinner options for dinner menu
 
-    //TODO - Add dish to menu is bugged, does not splice correctly
     const URL = "http://api.bigoven.com";
     const api_key = "?api_key=18f3cT02U9f6yRl3OKDpP8NA537kxYKu&pg=1&rpp=6";
 

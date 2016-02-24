@@ -10,13 +10,8 @@ var DetailViewController = function (view, model) {
         $('#meals-view').css('display', 'block');
         $('#select-dish').css('display', 'block');
 
-        /*$('#detail-view').addClass("active-inline-block");
-         $('#ingredientsView').addClass("active-inline-block");
-         $('#preparationsView').addClass("active-inline-block");*/
         $('#detail-view-container').css('display', 'none');
 
-
-        // setMealClickListener();
     };
     backbtn.click(theClickFunction);
 

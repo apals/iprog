@@ -18,11 +18,11 @@ var DetailView = function (container, model) {
 
     function setHtml(data) {
         if(!data || !data.RecipeID) return;
-        //var meal = model.getDish(model.getCurrentId());
+
         var meal = data;
 
         h2.html(meal.name);
-        img.attr("src", "images/bakedbrie.jpg");
+        img.attr("src", meal.ImageURL);
         p.html(meal.Description);
     }
 

@@ -17,8 +17,9 @@ var OverviewView = function (container, model) {
 
 
         for (var i = 0; i <= menu.length - 1; i++) {
+
             var div = $('<div>').addClass("meal");
-            var img = $('<img>').attr('id', 'meal-image').attr('src', 'images/bakedbrie.jpg');
+            var img = $('<img>').attr('id', 'meal-image').attr('src', menu[i].ImageURL);
             var p = $('<p>').append(menu[i].Title);
             div.append(img).append(p);
             menuwrapper.append(div);
