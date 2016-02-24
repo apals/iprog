@@ -4,15 +4,18 @@ var PreparationsView = function (container, model) {
     model.addObserver(this);
 
     container.prepend($('<h2>').append("Preparations"));
-    function setHtml() {
+    function setHtml(data) {
 
+        if(!data || !data.RecipeID) return;
 
-        var result = model.getDish(model.getCurrentId()).description;
+        console.log(data);
+
+        var result = data.Instructions; //model.getDish(model.getCurrentId()).description;
 
         var prepSteps = result.split(". ");
 
 
-        var list = $("<ol>");
+        var list = $("<ul>");
 
         for (var i = 0; i < prepSteps.length; i++) {
             var li = $("<li>");
@@ -25,9 +28,9 @@ var PreparationsView = function (container, model) {
     }
 
 
-    this.update = function () {
+    this.update = function (data) {
         container.empty();
-        setHtml();
+        setHtml(data);
     };
 
 };

@@ -16,15 +16,18 @@ var DetailView = function (container, model) {
     container.append(p);
     container.append($('<button>').attr("id", "back-to-select-dish-btn").append("Back to select dish"));
 
-    function setHtml() {
-        var meal = model.getDish(model.getCurrentId());
+    function setHtml(data) {
+        if(!data || !data.RecipeID) return;
+        //var meal = model.getDish(model.getCurrentId());
+        var meal = data;
+
         h2.html(meal.name);
-        img.attr("src", "images/" + meal.image);
-        p.html(meal.description);
+        img.attr("src", "images/bakedbrie.jpg");
+        p.html(meal.Description);
     }
 
-    this.update = function () {
-        setHtml();
+    this.update = function (data) {
+        setHtml(data);
     }
 
 };

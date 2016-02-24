@@ -9,14 +9,15 @@ var OverviewView = function (container, model) {
     var lastThing = $('<div>').addClass("meal");
     container.append(lastThing);
 
-    function setHtml() {
-        var menu = model.getFullMenu();
+    function setHtml(data) {
+        if(!data || !data.Results) return;
+        var menu = data.Results;//; = model.getFullMenu();
         //var partytitle = $('#partytitle').append("\"" + model.getPartyName() + "\" set for " + model.getNumberOfGuests() + " people");
 
 
         for (var i = 0; i <= menu.length - 1; i++) {
             var div = $('<div>').addClass("meal");
-            var img = $('<img>').attr('id', 'meal-image').attr('src', 'images/' + menu[i].image);
+            var img = $('<img>').attr('id', 'meal-image').attr('src', 'images/bakedbrie.jpg');
             var p = $('<p>').append(menu[i].name);
             div.append(img).append(p);
             menuwrapper.append(div);
@@ -28,9 +29,9 @@ var OverviewView = function (container, model) {
     container.append($('<hr>'));
     container.append($('<div>').addClass("align-center").append(button));
 
-    this.update = function () {
+    this.update = function (data) {
         $('#full-menu-wrapper').empty();
-        setHtml();
+        setHtml(data);
     };
 
 };

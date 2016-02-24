@@ -1,16 +1,21 @@
 var MealsView = function (container, model) {
 
 
-    function setHtml() {
-        var availableMenus = model.getAllDishes("starter");
-        var availableMenus2 = model.getAllDishes("main dish");
-        var availableMenus3 = model.getAllDishes("dessert");
+  /*  console.log("I AM THE ONE CALLING");
+    var availableMenus = model.getAllDishes("starter");
+    var availableMenus2 = model.getAllDishes("main dish");
+    var availableMenus3 = model.getAllDishes("dessert");
+    availableMenus.push.apply(availableMenus, availableMenus2);
+    availableMenus.push.apply(availableMenus, availableMenus3);
+    availableMenus = model.getCurrentList();*/
 
+    function setHtml(data) {
 
-        availableMenus.push.apply(availableMenus, availableMenus2);
-        availableMenus.push.apply(availableMenus, availableMenus3);
+        if(!data || !data.Results) return;
 
-        availableMenus = model.getCurrentList();
+        console.log("Setting smealsvis data");
+
+        availableMenus = data.Results;
 
 
         var row;
@@ -23,25 +28,15 @@ var MealsView = function (container, model) {
             var id = availableMenus[i].id;
 
             var div = $('<div>').addClass("col-md-4").addClass("meal-container");
-            var img = $('<img>').attr('src', 'images/' + availableMenus[i].image + '').attr('id', 'dish-in-view');
+            var img = $('<img>').attr('src', 'images/bakedbrie.jpg').attr('id', 'dish-in-view');
 
 
-            div.attr("meal-id", id);
+            div.attr("meal-id", availableMenus[i].RecipeID);
             div.append(img);
-            div.append($('<p>').append(availableMenus[i].name));
+            div.append($('<p>').append(availableMenus[i].Title));
             div.append($('<p>').addClass("small-text").append(availableMenus[i].description));
             div.appendTo(row);
 
-
-/*            div.click(function () {
-
-                $("#meals-view").css('display', 'none');
-                $('#select-dish').css('display', 'none');
-                $('#detail-view-container').css('display', 'block');
-
-                model.setCurrentId($(this).attr("meal-id"));
-
-            });*/
         }
     }
 
@@ -50,7 +45,7 @@ var MealsView = function (container, model) {
 
     this.update = function (data) {
         container.empty();
-        setHtml();
+        setHtml(data);
     };
 
 

@@ -32,7 +32,6 @@ var PanelViewController = function (view, model) {
 
 
         $("#header-info-view").css('display', 'block');
-        //$("#preparations-overview-view").css('display', 'block');
         $("#full-menu-wrapper").css('display', 'block');
         $("#overviewView").css('display', 'block');
 

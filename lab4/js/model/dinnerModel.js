@@ -8,7 +8,7 @@ var DinnerModel = function () {
 
     //TODO - Add dish to menu is bugged, does not splice correctly
     const URL = "http://api.bigoven.com";
-    const api_key = "?api_key=18f3cT02U9f6yRl3OKDpP8NA537kxYKu&pg=1&rpp=10";
+    const api_key = "?api_key=18f3cT02U9f6yRl3OKDpP8NA537kxYKu&pg=1&rpp=6";
 
     this.numberOfGuests = 1;
     this.fullMenu = [];
@@ -35,16 +35,8 @@ var DinnerModel = function () {
         observers.push(observer);
     };
 
-    function createCallback(x, m) {
-        return function () {
-            console.log("notifying");
-            for (var i = 0; i < observers.length; i++) {
-                observers[i].update();
-            }
-        };
-    }
-
     var notifyObservers = function (data) {
+        console.log("notifying everyone..");
         for (var i = 0; i < observers.length; i++) {
             observers[i].update(data);
         }
@@ -121,8 +113,8 @@ var DinnerModel = function () {
     this.getAllIngredients = function () {
         var ingredients = [];
         for (var i = 0; i < this.fullMenu.length; i++) {
-            for (var j = 0; j < this.fullMenu[i].ingredients; j++) {
-                ingredients.push(this.fullMenu[i].ingredients[j]);
+            for (var j = 0; j < this.fullMenu[i].Ingredients; j++) {
+                ingredients.push(this.fullMenu[i].Ingredients[j]);
             }
         }
         return ingredients;
@@ -132,8 +124,8 @@ var DinnerModel = function () {
     this.getTotalMenuPrice = function () {
         var totalMenuPrice = 0;
         for (var i = 0; i < this.fullMenu.length; i++) {
-            for (var j = 0; j < this.fullMenu[i].ingredients.length; j++) {
-                totalMenuPrice += this.fullMenu[i].ingredients[j].price;
+            for (var j = 0; j < this.fullMenu[i].Ingredients.length; j++) {
+                totalMenuPrice += 1;
             }
         }
         return totalMenuPrice;
@@ -142,41 +134,53 @@ var DinnerModel = function () {
     //Returns the total price of the menu (all the ingredients multiplied by number of guests).
     this.getDishPrice = function (id) {
         var totalDishPrice = 0;
-        for (var i = 0; i < dishes.length; i++) {
+        /*for (var i = 0; i < dishes.length; i++) {
             if (dishes[i].id == id) {
                 for (var j = 0; j < dishes[i].ingredients.length; j++) {
                     totalDishPrice += dishes[i].ingredients[j].price;
                 }
             }
 
-        }
+        }*/
         return totalDishPrice;
     };
 
     //Adds the passed dish to the menu. If the dish of that type already exists on the menu
     //it is removed from the menu and the new one added.
     this.addDishToMenu = function (id) {
+        console.log("Add dish to menu with id : " + id);
         var type;
-        var dish;
-        for (var j = 0; j < dishes.length; j++) {
-            if (dishes[j].id == id) {
-                type = dishes[j].type;
-                dish = dishes[j];
-                break;
+
+        var xmlhttp = new XMLHttpRequest();
+
+        console.log("Get alld ishes");
+
+
+        xmlhttp.onreadystatechange = (function (x, menu) {
+            return function () {
+                console.log("yeah");
+                if (x.readyState == 4 && x.status == 200) {
+                    for (var i = 0; i < menu.length; i++) {
+                        if (menu[i].type === type) {
+                            //remove
+                            menu.splice(i, 1);
+                        }
+                    }
+
+                    //add the new one
+                    menu.push(JSON.parse(x.responseText));
+                    console.log(JSON.parse(x.responseText));
+
+                    notifyObservers(JSON.parse(x.responseText));
+                }
             }
-        }
+        })(xmlhttp, this.fullMenu);
 
-        for (var i = 0; i < this.fullMenu.length; i++) {
-            if (this.fullMenu[i].type === type) {
-                //remove
-                this.fullMenu.splice(i, 1);
-            }
-        }
+        xmlhttp.open("GET", URL + "/recipe/" + id + api_key, true);
+        xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xmlhttp.send();
 
-        //add the new one
-        this.fullMenu.push(dish);
 
-        notifyObservers();
     };
 
     //Removes dish from menu
@@ -196,11 +200,10 @@ var DinnerModel = function () {
 
     function doGet(url) {
 
-        console.log("Getting form url " + url);
+
 
         var xmlhttp = new XMLHttpRequest();
 
-        console.log("Get alld ishes");
 
 
         xmlhttp.onreadystatechange = (function (x) {
@@ -208,14 +211,13 @@ var DinnerModel = function () {
                 console.log("yeah");
                 if (x.readyState == 4 && x.status == 200) {
                     //console.log(x.responseText);
-                    console.log("yeah got some Data");
                     var json = JSON.parse(x.responseText);
-                    notifyObservers();
+                    notifyObservers(json);
                 }
             }
         })(xmlhttp);
 
-        xmlhttp.open("GET", url + api_key, true);
+        xmlhttp.open("GET", url, true);
         xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         xmlhttp.send();
     }
@@ -225,7 +227,7 @@ var DinnerModel = function () {
     //if you don't pass any filter all the dishes will be returned
     this.getAllDishes = function (type, filter) {
 
-        doGet(URL + "/recipes" + api_key);
+        doGet(URL + "/recipes" + api_key + "&any_kw=" + type);
 
         return $(dishes).filter(function (index, dish) {
             var found = true;

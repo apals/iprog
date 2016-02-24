@@ -14,21 +14,28 @@ var IngredientsView = function (container, model) {
     setHtml();
 
 
-    function setHtml() {
-        var meal = model.getDish(model.getCurrentId());
+    function setHtml(data) {
+        if(!data || !data.RecipeID) return;
+
+
+
+        var meal = data;
         var numberOfGuests = model.getNumberOfGuests();
+
+
 
         h2.html("Ingredients for " + numberOfGuests + " people");
 
 
         table.empty();
 
-        meal.ingredients.forEach(function (ingredient) {
+
+        meal.Ingredients.forEach(function (ingredient) {
             var row = $('<tr>');
-            row.append($('<td>').append(ingredient.quantity * numberOfGuests));
-            row.append($('<td>').append(ingredient.unit));
-            row.append($('<td>').append(ingredient.name));
-            row.append($('<td>').append(ingredient.price * numberOfGuests));
+            row.append($('<td>').append(ingredient.DisplayQuantity * numberOfGuests));
+            row.append($('<td>').append(ingredient.MetricUnit));
+            row.append($('<td>').append(ingredient.Name));
+            row.append($('<td>').append(1 * numberOfGuests));
             table.append(row);
         });
         lastSpan.html(model.getDishPrice(model.getCurrentId()) * numberOfGuests);
@@ -42,7 +49,7 @@ var IngredientsView = function (container, model) {
     container.append(lastSpan);
 
 
-    this.update = function () {
-        setHtml();
+    this.update = function (data) {
+        setHtml(data);
     }
 };

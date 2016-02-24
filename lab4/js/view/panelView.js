@@ -24,21 +24,27 @@ var PanelView = function (container, model) {
 
     setHtml();
 
-    function setHtml() {
+    function setHtml(data) {
+
+        console.log(data);
+        if (!data) return;
+
+        console.log(data);
+
         $("#dish-and-cost").empty();
         var menu = model.getFullMenu();
         partytitle.html(model.getPartyName()); // + "\" set for " + model.getNumberOfGuests() + " people");
 
 
         for (var i = menu.length - 1; i >= 0; i--) {
-            $("#dish-and-cost").append(menu[i].name + " - " + model.getDishPrice(menu[i].id) * model.getNumberOfGuests() + " kr").append("<br>");
+            $("#dish-and-cost").append(menu[i].Title + " - " + model.getDishPrice(menu[i].id) * model.getNumberOfGuests() + " kr").append("<br>");
         }
 
         $("#dish-and-cost").append("<br><br>Total menu cost: " + model.getTotalMenuPrice() * model.getNumberOfGuests() + "kr.");
     }
 
-    this.update = function() {
-        setHtml();
+    this.update = function (data) {
+        setHtml(data);
     };
     container.append($("<hr>"));
     container.append($("<button>").attr("id", "confirm-dinner-btn").append("Confirm Dinner"));

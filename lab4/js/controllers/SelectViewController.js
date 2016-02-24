@@ -14,7 +14,8 @@ var SelectViewController = function (view, model) {
     $('#types').change(function () {
         var optionSelected = $(this).find("option:selected");
 
-        model.setType(optionSelected.val());
+        //model.setType(optionSelected.val());
+        model.getAllDishes(optionSelected.val());
     });
 
 };

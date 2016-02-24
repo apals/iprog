@@ -16,7 +16,7 @@ var HeaderInfoView = function (container, model) {
 		h2.html("\"" + model.getPartyName() + "\" set for " + model.getNumberOfGuests() + " people");
 	}
     
-    this.update = function() {
-    	setHtml();
+    this.update = function(data) {
+    	setHtml(data);
     }
 };
