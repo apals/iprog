@@ -21,31 +21,18 @@ var IngredientsView = function (container, model) {
         if(!data.RecipeID && !data.newGuests) return;
         if(data.RecipeID) meal = data;
 
-        console.log(data);
-
-        if (!data || (!data.RecipeID && !data.newGuests)) {
-
-        } else {
-
-        }
         var numberOfGuests = model.getNumberOfGuests();
 
-        var totprice = 0;
+        table.empty();
         if (data.newGuests) {
-            console.log("new Guests");
-            console.log(meal);
             numberOfGuests = data.newGuests;
             h2.html("Ingredients for " + data.newGuests + " people");
-            table.empty();
-
-
-
-        } else {
-            table.empty();
         }
 
 
-
+        if(!meal) return;
+        
+        var totprice = 0;
         meal.Ingredients.forEach(function (ingredient) {
             var row = $('<tr>');
             row.append($('<td>').attr('id', 'quantity').append(ingredient.DisplayQuantity * numberOfGuests));

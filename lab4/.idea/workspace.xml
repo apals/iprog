@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2758b9d0-bebd-43da-889b-1c095e8de0e9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/view/ingredientsView.js" afterPath="$PROJECT_DIR$/js/view/ingredientsView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/view/preparationsView.js" afterPath="$PROJECT_DIR$/js/view/preparationsView.js" />
     </list>
     <ignored path="lab4.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -105,8 +103,8 @@
       <file leaf-file-name="ingredientsView.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/view/ingredientsView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5272727">
-              <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5090909">
+              <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -691,8 +689,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/view/ingredientsView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5272727">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5090909">
+          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
           <folding />
         </state>
       </provider>
