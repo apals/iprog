@@ -9,6 +9,7 @@ var PreparationsView = function (container, model) {
 
         if(!data || !data.RecipeID) return;
 
+        container.empty();
 
         var result = data.Instructions; //model.getDish(model.getCurrentId()).description;
 
@@ -30,7 +31,6 @@ var PreparationsView = function (container, model) {
 
 
     this.update = function (data) {
-        container.empty();
         setHtml(data);
     };
 

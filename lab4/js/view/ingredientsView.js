@@ -12,37 +12,50 @@ var IngredientsView = function (container, model) {
 
     var lastSpan = $('<span>').append(model.getTotalMenuPrice()).addClass("right");
     setHtml();
+    var meal;
 
-
+    var displayquantity;
 
     function setHtml(data) {
+        if(!data) return;
+        if(!data.RecipeID && !data.newGuests) return;
+        if(data.RecipeID) meal = data;
 
-        if (!data || (!data.RecipeID && !data.newGuests)) return;
+        console.log(data);
 
+        if (!data || (!data.RecipeID && !data.newGuests)) {
 
-        var meal = data;
-        var numberOfGuests = model.getNumberOfGuests();
-
-
-        if (data.newGuests) {
-            h2.html("Ingredients for " + data.newGuests + " people");
         } else {
 
+        }
+        var numberOfGuests = model.getNumberOfGuests();
 
+        var totprice = 0;
+        if (data.newGuests) {
+            console.log("new Guests");
+            console.log(meal);
+            numberOfGuests = data.newGuests;
+            h2.html("Ingredients for " + data.newGuests + " people");
             table.empty();
 
 
-            meal.Ingredients.forEach(function (ingredient) {
-                var row = $('<tr>');
-                row.append($('<td>').append(ingredient.DisplayQuantity * numberOfGuests));
-                row.append($('<td>').append(ingredient.MetricUnit));
-                row.append($('<td>').append(ingredient.Name));
-                row.append($('<td>').append(1 * numberOfGuests));
-                table.append(row);
-            });
-            lastSpan.html(model.getDishPrice(model.getCurrentId()) * numberOfGuests);
 
+        } else {
+            table.empty();
         }
+
+
+
+        meal.Ingredients.forEach(function (ingredient) {
+            var row = $('<tr>');
+            row.append($('<td>').attr('id', 'quantity').append(ingredient.DisplayQuantity * numberOfGuests));
+            row.append($('<td>').append(ingredient.MetricUnit));
+            row.append($('<td>').append(ingredient.Name));
+            row.append($('<td>').attr('id', 'price').append(ingredient.DisplayQuantity * numberOfGuests));
+            totprice += Number(ingredient.DisplayQuantity * numberOfGuests);
+            table.append(row);
+        });
+        lastSpan.html(totprice);
     }
 
     container.append($('<hr>'));
