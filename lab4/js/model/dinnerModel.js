@@ -129,7 +129,7 @@ var DinnerModel = function () {
         var totalMenuPrice = 0;
         for (var i = 0; i < this.fullMenu.length; i++) {
             for (var j = 0; j < this.fullMenu[i].Ingredients.length; j++) {
-                totalMenuPrice += 1;
+                totalMenuPrice += Number(this.fullMenu[i].Ingredients[j].DisplayQuantity.split(" ")[0].trim().split("/")[0].trim());
             }
         }
         return totalMenuPrice;
@@ -209,8 +209,6 @@ var DinnerModel = function () {
 
     function doGet(url) {
 
-
-        console.log("doing get with the following url: " + url);
 
         var xmlhttp = new XMLHttpRequest();
 

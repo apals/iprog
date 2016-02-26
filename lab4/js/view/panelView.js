@@ -10,10 +10,10 @@ var PanelView = function (container, model) {
 
     container.append($("<h3>").attr("id", "paneltitle"));
     container.append($("<hr>"));
-    container.append($("<h5>").append("Name of party"))
+    container.append($("<h5>").append("Name of party"));
     container.append($('<input>').attr("type", "text").attr("id", "name-of-party-input").attr("placeholder", "Party name"));
     container.append($("<hr>"));
-    container.append($("<h5>").append("Number of guests"))
+    container.append($("<h5>").append("Number of guests"));
     container.append($('<input>').attr("type", "number").attr("id", "number-of-guests-input").attr("placeholder", "Guests").attr("value", "1").attr("min", "1"));
     container.append($("<hr>"));
     container.append($("<h4>").append("Dish Name - Cost"));
@@ -32,7 +32,11 @@ var PanelView = function (container, model) {
 
 
         for (var i = menu.length - 1; i >= 0; i--) {
-            $("#dish-and-cost").append(menu[i].Title + " - " + model.getDishPrice(menu[i].id) * model.getNumberOfGuests() + " kr").append("<br>");
+            var dishprice = 0;
+            for(var j = 0; j < menu[i].Ingredients.length; j++) {
+                dishprice += Number(menu[i].Ingredients[j].DisplayQuantity.split(" ")[0].trim().split("/")[0].trim()) * model.getNumberOfGuests();
+            }
+            $("#dish-and-cost").append(menu[i].Title + " - " + dishprice + " kr").append("<br>");
         }
 
         $("#dish-and-cost").append("<br><br>Total menu cost: " + model.getTotalMenuPrice() * model.getNumberOfGuests() + "kr.");

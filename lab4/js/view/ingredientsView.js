@@ -10,13 +10,14 @@ var IngredientsView = function (container, model) {
     container.append(table);
 
 
-    var lastSpan = $('<span>').append(model.getTotalMenuPrice()).addClass("right");
+    var lastSpan = $('<div id="lastspan" style="width: 100px; height: 100px">').html("Total price: " + model.getTotalMenuPrice()); //.addClass("right");
     setHtml();
     var meal;
 
     var displayquantity;
 
     function setHtml(data) {
+        console.log(data);
         if(!data) return;
         if(!data.RecipeID && !data.newGuests) return;
         if(data.RecipeID) meal = data;
@@ -39,10 +40,15 @@ var IngredientsView = function (container, model) {
             row.append($('<td>').append(ingredient.MetricUnit));
             row.append($('<td>').append(ingredient.Name));
             row.append($('<td>').attr('id', 'price').append(ingredient.DisplayQuantity * numberOfGuests));
-            totprice += Number(ingredient.DisplayQuantity * numberOfGuests);
+            var dispQuantity = Number(ingredient.DisplayQuantity.split(" ")[0].trim().split("/")[0].trim());
+
+            console.log(dispQuantity);
+            var ingprice = Number(dispQuantity) * Number(numberOfGuests);
+            console.log(ingprice);
+            totprice += ingprice;
             table.append(row);
         });
-        lastSpan.html(totprice);
+        lastSpan.html("Total price: " + totprice);
     }
 
     container.append($('<hr>'));

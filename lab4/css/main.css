@@ -78,6 +78,9 @@ header span {
     width: 250px;
 }
 
+#panel input {
+    color: black;
+}
 
 /*=== SELECT DISH ===*/
 #select-dish {
