@@ -73,7 +73,8 @@ var DinnerModel = function () {
 
     this.setCurrentSearch = function (s) {
         this.currentSearch = s;
-        notifyObservers();
+        console.log("set current search");
+        doGet(URL + "/recipes" + api_key + "&any_kw=" + s);
     };
 
     this.getCurrentSearch = function () {

@@ -31,7 +31,7 @@ var IngredientsView = function (container, model) {
 
 
         if(!meal) return;
-        
+
         var totprice = 0;
         meal.Ingredients.forEach(function (ingredient) {
             var row = $('<tr>');
