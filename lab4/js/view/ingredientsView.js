@@ -17,7 +17,6 @@ var IngredientsView = function (container, model) {
     var displayquantity;
 
     function setHtml(data) {
-        console.log(data);
         if(!data) return;
         if(!data.RecipeID && !data.newGuests) return;
         if(data.RecipeID) meal = data;
@@ -42,9 +41,9 @@ var IngredientsView = function (container, model) {
             row.append($('<td>').attr('id', 'price').append(ingredient.DisplayQuantity * numberOfGuests));
             var dispQuantity = Number(ingredient.DisplayQuantity.split(" ")[0].trim().split("/")[0].trim());
 
-            console.log(dispQuantity);
+            
             var ingprice = Number(dispQuantity) * Number(numberOfGuests);
-            console.log(ingprice);
+
             totprice += ingprice;
             table.append(row);
         });

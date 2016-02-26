@@ -162,7 +162,6 @@ var DinnerModel = function () {
 
         xmlhttp.onreadystatechange = (function (x, menu) {
             return function () {
-                console.log("yeah");
                 if (x.readyState == 4 && x.status == 200) {
 
                     var dish = JSON.parse(x.responseText);
@@ -177,8 +176,6 @@ var DinnerModel = function () {
 
                     //add the new one
                     menu.push(dish);
-                    console.log("Added new things to menu: " );
-                    console.log(menu);
 
                     notifyObservers(JSON.parse(x.responseText));
                 }
