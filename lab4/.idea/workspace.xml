@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2758b9d0-bebd-43da-889b-1c095e8de0e9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../lab2/.swp" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/SelectViewController.js" afterPath="$PROJECT_DIR$/js/controllers/SelectViewController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/model/dinnerModel.js" afterPath="$PROJECT_DIR$/js/model/dinnerModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/view/ingredientsView.js" afterPath="$PROJECT_DIR$/js/view/ingredientsView.js" />
     </list>
     <ignored path="lab4.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,8 +27,8 @@
       <file leaf-file-name="dinnerModel.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/model/dinnerModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.84606063">
-              <caret line="75" column="42" selection-start-line="75" selection-start-column="42" selection-end-line="75" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.38787878">
+              <caret line="212" column="64" selection-start-line="212" selection-start-column="64" selection-end-line="212" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -93,7 +91,7 @@
         <entry file="file://$PROJECT_DIR$/js/controllers/SelectViewController.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+              <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -138,7 +136,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/js/view/headerInfoView.js" />
-        <option value="$PROJECT_DIR$/js/controllers/SelectViewController.js" />
         <option value="$PROJECT_DIR$/js/controllers/IngredientsViewController.js" />
         <option value="$PROJECT_DIR$/js/controllers/MealsViewController.js" />
         <option value="$PROJECT_DIR$/js/view/detailView.js" />
@@ -149,6 +146,7 @@
         <option value="$PROJECT_DIR$/js/view/preparationsView.js" />
         <option value="$PROJECT_DIR$/js/view/ingredientsView.js" />
         <option value="$PROJECT_DIR$/main.html" />
+        <option value="$PROJECT_DIR$/js/controllers/SelectViewController.js" />
         <option value="$PROJECT_DIR$/js/model/dinnerModel.js" />
       </list>
     </option>
@@ -749,15 +747,15 @@
     <entry file="file://$PROJECT_DIR$/js/controllers/SelectViewController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/model/dinnerModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.84606063">
-          <caret line="75" column="42" selection-start-line="75" selection-start-column="42" selection-end-line="75" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.38787878">
+          <caret line="212" column="64" selection-start-line="212" selection-start-column="64" selection-end-line="212" selection-end-column="64" />
           <folding />
         </state>
       </provider>

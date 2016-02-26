@@ -71,10 +71,14 @@ var DinnerModel = function () {
     };
 
 
-    this.setCurrentSearch = function (s) {
+    this.setCurrentSearch = function (s, t) {
         this.currentSearch = s;
         console.log("set current search");
-        doGet(URL + "/recipes" + api_key + "&any_kw=" + s);
+        if(t) {
+            doGet(URL + "/recipes" + api_key + "&title_kw=" + s + "&any_kw=" + t);
+        } else {
+            doGet(URL + "/recipes" + api_key + "&title_kw=" + s);
+        }
     };
 
     this.getCurrentSearch = function () {
@@ -206,6 +210,7 @@ var DinnerModel = function () {
     function doGet(url) {
 
 
+        console.log("doing get with the following url: " + url);
 
         var xmlhttp = new XMLHttpRequest();
 
