@@ -3,34 +3,35 @@
 // dependency on any service you need. Angular will insure that the
 // service is created first time it is needed and then just reuse it
 // the next time.
-dinnerPlannerApp.factory('Dinner',function ($resource) {
-  
-  var numberOfGuest = 2;
+dinnerPlannerApp.factory('Dinner', function ($resource) {
+
+    const api_key = "18f3cT02U9f6yRl3OKDpP8NA537kxYKu";
+    var numberOfGuest = 2;
+    this.DishSearch = $resource('http://api.bigoven.com/recipes',{pg:1,rpp:25,api_key: api_key});
+    this.Dish = $resource('http://api.bigoven.com/recipe/:id',{api_key: api_key});
 
 
-  this.setNumberOfGuests = function(num) {
-    numberOfGuest = num;
-  }
+    this.setNumberOfGuests = function (num) {
+        numberOfGuest = num;
+    };
 
-  this.getNumberOfGuests = function() {
-    return numberOfGuest;
-  }
-
-
-  // TODO in Lab 5: Add your model code from previous labs
-  // feel free to remove above example code
-  // you will need to modify the model (getDish and getAllDishes) 
-  // a bit to take the advantage of Angular resource service
-  // check lab 5 instructions for details
+    this.getNumberOfGuests = function () {
+        return numberOfGuest;
+    };
 
 
 
+    // TODO in Lab 5: Add your model code from previous labs
+    // feel free to remove above example code
+    // you will need to modify the model (getDish and getAllDishes)
+    // a bit to take the advantage of Angular resource service
+    // check lab 5 instructions for details
 
 
-  // Angular service needs to return an object that has all the
-  // methods created in it. You can consider that this is instead
-  // of calling var model = new DinnerModel() we did in the previous labs
-  // This is because Angular takes care of creating it when needed.
-  return this;
+    // Angular service needs to return an object that has all the
+    // methods created in it. You can consider that this is instead
+    // of calling var model = new DinnerModel() we did in the previous labs
+    // This is because Angular takes care of creating it when needed.
+    return this;
 
 });

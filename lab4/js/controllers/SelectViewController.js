@@ -8,6 +8,8 @@ var SelectViewController = function (view, model) {
     searchbar.change(function () {
 
 
+        $("#meals-view").empty();
+        $("#meals-view").append("Loading");
         model.setCurrentSearch(searchbar.val(), $('#types').find("option:selected").val());
     });
 
@@ -17,6 +19,9 @@ var SelectViewController = function (view, model) {
 
         //model.setType(optionSelected.val());
         model.getAllDishes(optionSelected.val());*/
+
+        $("#meals-view").empty();
+        $("#meals-view").append("Loading");
         model.setCurrentSearch($("#searchfield").val(), $('#types').find("option:selected").val());
     });
 

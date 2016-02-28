@@ -32,6 +32,7 @@ var IngredientsView = function (container, model) {
 
         if(!meal) return;
 
+        $("#yeah").html("");
         var totprice = 0;
         meal.Ingredients.forEach(function (ingredient) {
             var row = $('<tr>');
@@ -41,7 +42,7 @@ var IngredientsView = function (container, model) {
             row.append($('<td>').attr('id', 'price').append(ingredient.DisplayQuantity * numberOfGuests));
             var dispQuantity = Number(ingredient.DisplayQuantity.split(" ")[0].trim().split("/")[0].trim());
 
-            
+
             var ingprice = Number(dispQuantity) * Number(numberOfGuests);
 
             totprice += ingprice;

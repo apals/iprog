@@ -11,6 +11,10 @@ var MealsView = function (container, model) {
 
     function setHtml(data) {
 
+        if(data && data.error) {
+            container.prepend("Error when getting meals");
+        }
+
         if(!data || !data.Results) return;
 
         console.log("Setting mealsview data. Data is as follows: ");
@@ -19,8 +23,6 @@ var MealsView = function (container, model) {
         availableMenus = data.Results;
 
         container.empty();
-
-
 
         var row;
         for (var i = 0; i < availableMenus.length; i++) {

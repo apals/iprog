@@ -18,6 +18,9 @@ var DetailView = function (container, model) {
    
 
     function setHtml(data) {
+        if(data && data.error) {
+            container.prepend("Error when getting meals");
+        }
         if(!data || !data.RecipeID) return;
 
         var meal = data;

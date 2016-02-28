@@ -178,6 +178,8 @@ var DinnerModel = function () {
                     menu.push(dish);
 
                     notifyObservers(JSON.parse(x.responseText));
+                } else if(x.readyState == 4) {
+                    notifyObservers({error : 'error'});
                 }
             }
         })(xmlhttp, this.fullMenu);
@@ -217,6 +219,8 @@ var DinnerModel = function () {
                     //console.log(x.responseText);
                     var json = JSON.parse(x.responseText);
                     notifyObservers(json);
+                } else if(x.readyState == 4) {
+                    notifyObservers({error : 'error'});
                 }
             }
         })(xmlhttp);
