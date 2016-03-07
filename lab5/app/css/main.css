@@ -1,0 +1,304 @@
+@font-face {
+    font-family: Sketch;
+    src: url('../fonts/SketchRockwell-Bold.ttf');
+}
+
+@font-face {
+    font-family: Polo;
+    src: url('../fonts/Polo-Brush.ttf');
+}
+
+
+/* Handle how links are coloured */
+a:link {color:#000000;}
+a:visited {color:#000000;}
+a:hover {color:#000000;}
+a:active {color:#000000;}
+
+/* BODY AND HTML*/
+body, html {
+    background: #D6F9ED;
+    height: 100vh;
+    width: 100vh;
+}
+
+.inner-site-wrapper {
+    overflow: scroll;
+    margin-bottom: 5%;
+    height: 90vh;
+    width: 100vw;
+}
+
+/* HEADER */
+header {
+    background: #3388BB;
+    padding: 2rem;
+    border-style: solid;
+    border-color: lightblue;
+    border-width: 0 0 2px 0;
+    text-align: right;
+    padding: 5px 1% 5px 20%;
+    color: black;
+
+}
+
+header h1 {
+    text-transform: uppercase;
+    font-size: 40px;
+    margin: auto;
+    padding: 2rem 2rem;
+    display: inline;
+    font-family: Sketch;
+}
+
+header span {
+    font-family: Polo;
+    margin: auto;
+    padding: 2rem 2rem;
+}
+
+
+/*=== PANEL ===*/
+
+#panel {
+    background: #44AAFF;
+    width: 200px;
+    position: absolute;
+    height: 100%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+/* All elements in the panel*/
+#panel > * {
+    max-width: 100%;
+}
+
+#dish-and-cost {
+    width: 250px;
+}
+
+#panel input {
+    color: black;
+}
+
+/*=== SELECT DISH ===*/
+#select-dish {
+    padding: 5px 0 5px 7%;
+    background: #88CCFF;
+    overflow: hidden;
+    border-style: solid;
+    border-color: lightblue;
+    border-width: 0 0 2px 0;
+    text-align: center;
+    color: black;
+}
+
+
+/*=== MEALS VIEW ===*/
+
+#meals-view {
+    height: 75vh;
+    margin-left: 200px;
+
+    overflow-y: auto;
+    overflow-x: auto;
+    text-align: center;
+}
+
+#meals-view div {
+    padding: 1rem;
+}
+
+#meals-view div p {
+    text-align: center;
+    font-family: Polo;
+    font-size: 18px;
+    color: #FFFFFF;
+
+
+}
+
+#dish-in-view {
+    width: 175px;
+    height: 175px;
+}
+
+
+/*=== DETAIL VIEW ===*/
+#detail-view {
+    float: left;
+    width: 35vw;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+#detail-view-container {
+    display: none;
+    margin-left: 200px;
+    padding-left: 5%;
+    width: 80vw;
+}
+
+#detail-view img {
+    width: 70%;
+    height: auto;
+}
+
+
+/*=== INGREDIENTS VIEW ===*/
+#ingredientsView {
+    text-align: center;
+    width: 35%;
+    padding: 0 2rem;
+}
+
+
+#ingredients-table {
+    width: 100%;
+}
+
+
+
+/*=== PREPARATIONS VIEW ===*/
+#preparationsView {
+    clear: both;
+    width: 70%;
+    height: 50px;
+    padding-left: 20%;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+
+}
+
+
+
+/*=== OVERVIEW VIEW ===*/
+
+#overviewView {
+    display: none;
+}
+
+
+#full-menu-wrapper {
+    clear: both;
+    text-align: center;
+    /*    height: 100%;*/
+    display: none;
+}
+
+.meal {
+    height: auto;
+    width: 20%;
+    padding: 2rem;
+    display: inline-block;
+}
+
+.meal img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/*=== PREPARATIONS OVERVIEW ===*/
+
+#preparations-overview-view {
+    display: none;
+    padding: 1rem;
+    margin: 0;
+    width: 100%;
+}
+
+.meal-preparation {
+    width: 100%;
+    margin: 0;
+}
+
+.meal-preparation img {
+    width: 20%;
+    height: 20%;
+}
+
+
+/*=== TOP CONTAINER - HEADER OVERVIEW ===*/
+
+.top-container > * {
+    margin: 10px;
+}
+
+.top-container {
+    padding: 5px 20% 5px 20%;
+    background: #88CCFF;
+    overflow: auto;
+    border-style: solid;
+    border-color: lightblue;
+    border-width: 0 0 2px 0;
+    display: none;
+}
+
+
+/* === BUTTON HANDLING ===*/
+
+button {
+    font-family: Polo;
+    font-size: 18px;
+    opacity: 0.8;
+    color: white;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #123456;
+}
+
+#confirm-dish-btn {
+    margin-top: 15px;
+    width: 300px;
+}
+
+#back-to-select-dish-btn {
+    margin-top: 15px;
+    width: 300px;
+}
+
+
+
+/*=== GLOBALLY USED CLASSES ===*/
+
+
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+
+.align-center {
+    text-align: center;
+}
+
+
+.small-text {
+    font-size: 14px !important;
+}
+
+.overlay {
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    overflow: auto;
+    top: 0px;
+    left: 0px;
+    background: rgba(150, 150, 150, 0.7); /*can be anything, of course*/
+}
+
+.clearfix:after {
+    content: " ";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+

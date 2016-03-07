@@ -6,6 +6,7 @@ dinnerPlannerApp.controller('DishCtrl', function ($scope,$routeParams,Dinner) {
   // $routingParams.paramName
   // Check the app.js to figure out what is the paramName in this case
     console.log($routeParams.dishId);
+
     Dinner.Dish.get({id: $routeParams.dishId}, function(data) {
         console.log(data);
         $scope.dishPreparations = data.Instructions;
