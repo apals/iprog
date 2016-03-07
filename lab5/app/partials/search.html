@@ -12,10 +12,10 @@ not support it in free version) and list all the dishes that match the search. -
 				<span id="searchbar">
 					Keywords: <input ng-model="query" id="searchfield" type="text" style="color:black" placeholder="Search">
 				</span>
-    <button ng-click="search(query)">Find</button>
+    <button ng-click="search(query, singleSelect)">Find</button>
 
 				<span id="typeSelector">
-					<select id="types" style="color: #000000">
+					<select id="types" ng-model="singleSelect" style="color: #000000">
                         <option disabled selected value="">Select a type a dish</option>
                         <option value="starter">Starter</option>
                         <option value="main dish">Main dish</option>

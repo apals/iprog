@@ -99,6 +99,17 @@ dinnerPlannerApp.factory('Dinner', function ($resource, $cookieStore) {
     };
 
 
+    this.deleteFromMenu = function(dish) {
+        for(var i = 0; i < fullMenu.length; i++) {
+            if (fullMenu[i].RecipeID === dish.RecipeID) {
+                //remove
+                fullMenu.splice(i, 1);
+                return;
+            }
+        }
+    };
+
+
     // TODO in Lab 5: Add your model code from previous labs
     // feel free to remove above example code
     // you will need to modify the model (getDish and getAllDishes)
