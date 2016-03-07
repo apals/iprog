@@ -29,6 +29,11 @@ body, html {
     width: 100vw;
 }
 
+#dish-picture {
+    width: 300px;
+    height: 300px;
+}
+
 /* HEADER */
 header {
     background: #3388BB;
