@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2758b9d0-bebd-43da-889b-1c095e8de0e9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab5/app/js/dishCtrl.js" afterPath="$PROJECT_DIR$/../lab5/app/js/dishCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab5/app/js/searchCtrl.js" afterPath="$PROJECT_DIR$/../lab5/app/js/searchCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab5/app/partials/dish.html" afterPath="$PROJECT_DIR$/../lab5/app/partials/dish.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab5/app/partials/search.html" afterPath="$PROJECT_DIR$/../lab5/app/partials/search.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab5/app/js/dinnerService.js" afterPath="$PROJECT_DIR$/../lab5/app/js/dinnerService.js" />
     </list>
     <ignored path="lab4.iws" />
     <ignored path=".idea/workspace.xml" />

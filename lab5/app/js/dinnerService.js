@@ -6,6 +6,8 @@
 dinnerPlannerApp.factory('Dinner', function ($resource, $cookieStore) {
 
     const api_key = "18f3cT02U9f6yRl3OKDpP8NA537kxYKu";
+
+
     if ($cookieStore.get('numberOfGuests')) {
         this.numberOfGuest = $cookieStore.get('numberOfGuests');
     } else {
@@ -14,8 +16,6 @@ dinnerPlannerApp.factory('Dinner', function ($resource, $cookieStore) {
 
     this.partyName = "";
     if ($cookieStore.get('partyName')) {
-        console.log("yeah baprty name old");
-        console.log($cookieStore.get('partyName'));
         this.partyName = $cookieStore.get('partyName');
     }
 
@@ -27,8 +27,8 @@ dinnerPlannerApp.factory('Dinner', function ($resource, $cookieStore) {
     if ($cookieStore.get('fullMenuIds')) {
         fullMenuIds = $cookieStore.get('fullMenuIds');
         for (var i = 0; i < fullMenuIds.length; i++) {
+            
             this.Dish.get({id: fullMenuIds[i]}, function (data) {
-                console.log(data);
                 fullMenu.push(data);
             }, function (data) {
 
