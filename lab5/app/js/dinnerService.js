@@ -3,18 +3,42 @@
 // dependency on any service you need. Angular will insure that the
 // service is created first time it is needed and then just reuse it
 // the next time.
-dinnerPlannerApp.factory('Dinner', function ($resource) {
+dinnerPlannerApp.factory('Dinner', function ($resource, $cookieStore) {
 
     const api_key = "18f3cT02U9f6yRl3OKDpP8NA537kxYKu";
-    this.numberOfGuest = 2;
-    var partyName = "";
-    this.DishSearch = $resource('http://api.bigoven.com/recipes',{pg:1,rpp:6,api_key: api_key});
-    this.Dish = $resource('http://api.bigoven.com/recipe/:id',{api_key: api_key});
+    if ($cookieStore.get('numberOfGuests')) {
+        this.numberOfGuest = $cookieStore.get('numberOfGuests');
+    } else {
+        this.numberOfGuest = 2;
+    }
+
+    this.partyName = "";
+    if ($cookieStore.get('partyName')) {
+        console.log("yeah baprty name old");
+        console.log($cookieStore.get('partyName'));
+        this.partyName = $cookieStore.get('partyName');
+    }
+
+    this.DishSearch = $resource('http://api.bigoven.com/recipes', {pg: 1, rpp: 6, api_key: api_key});
+    this.Dish = $resource('http://api.bigoven.com/recipe/:id', {api_key: api_key});
 
     var fullMenu = [];
+    var fullMenuIds = [];
+    if ($cookieStore.get('fullMenuIds')) {
+        fullMenuIds = $cookieStore.get('fullMenuIds');
+        for (var i = 0; i < fullMenuIds.length; i++) {
+            this.Dish.get({id: fullMenuIds[i]}, function (data) {
+                console.log(data);
+                fullMenu.push(data);
+            }, function (data) {
+
+            });
+        }
+    }
 
 
     this.setNumberOfGuests = function (num) {
+        $cookieStore.put('numberOfGuests', num);
         this.numberOfGuest = num;
     };
 
@@ -23,6 +47,7 @@ dinnerPlannerApp.factory('Dinner', function ($resource) {
     };
 
     this.setPartyName = function (name) {
+        $cookieStore.put('partyName', name);
         this.partyName = name;
     };
 
@@ -30,7 +55,7 @@ dinnerPlannerApp.factory('Dinner', function ($resource) {
         return this.partyName;
     };
 
-    this.addDishToMenu = function(dish) {
+    this.addDishToMenu = function (dish) {
         for (var i = 0; i < fullMenu.length; i++) {
             if (fullMenu[i].Category === dish.Category) {
                 //remove
@@ -40,17 +65,22 @@ dinnerPlannerApp.factory('Dinner', function ($resource) {
 
         //add the new one
         fullMenu.push(dish);
+        fullMenuIds = [];
+        for (var i = 0; i < fullMenu.length; i++) {
+            fullMenuIds.push(fullMenu[i].RecipeID);
+        }
+        $cookieStore.put('fullMenuIds', fullMenuIds);
     };
 
-    this.getFullMenu = function() {
+    this.getFullMenu = function () {
         return fullMenu;
     };
 
-    this.getDishPrice = function(dish) {
-        if(!dish) return 0;
+    this.getDishPrice = function (dish) {
+        if (!dish) return 0;
         var price = 0;
-        for(var i = 0; i < dish.Ingredients.length; i++) {
-            if(isNaN(dish.Ingredients[i].DisplayQuantity * this.getNumberOfGuests())) {
+        for (var i = 0; i < dish.Ingredients.length; i++) {
+            if (isNaN(dish.Ingredients[i].DisplayQuantity * this.getNumberOfGuests())) {
 
             } else {
                 price += dish.Ingredients[i].DisplayQuantity * this.getNumberOfGuests();
@@ -60,9 +90,9 @@ dinnerPlannerApp.factory('Dinner', function ($resource) {
     };
 
 
-    this.getTotalMenuCost = function() {
+    this.getTotalMenuCost = function () {
         var price = 0;
-        for(var i = 0; i < fullMenu.length; i++) {
+        for (var i = 0; i < fullMenu.length; i++) {
             price += this.getDishPrice(fullMenu[i]);
         }
         return price;
