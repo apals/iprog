@@ -219,6 +219,10 @@ header span {
     margin: 0;
 }
 
+.meal-container {
+    padding: 0 !important;
+}
+
 .meal-preparation img {
     width: 20%;
     height: 20%;
@@ -307,3 +311,7 @@ button {
     clear: both;
 }
 
+.no-margin-no-padding {
+    margin: 0;
+    padding: 0;
+}

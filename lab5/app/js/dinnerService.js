@@ -6,18 +6,20 @@
 dinnerPlannerApp.factory('Dinner', function ($resource) {
 
     const api_key = "18f3cT02U9f6yRl3OKDpP8NA537kxYKu";
-    var numberOfGuest = 2;
+    this.numberOfGuest = 2;
     var partyName = "";
-    this.DishSearch = $resource('http://api.bigoven.com/recipes',{pg:1,rpp:25,api_key: api_key});
+    this.DishSearch = $resource('http://api.bigoven.com/recipes',{pg:1,rpp:6,api_key: api_key});
     this.Dish = $resource('http://api.bigoven.com/recipe/:id',{api_key: api_key});
+
+    var fullMenu = [];
 
 
     this.setNumberOfGuests = function (num) {
-        numberOfGuest = num;
+        this.numberOfGuest = num;
     };
 
     this.getNumberOfGuests = function () {
-        return numberOfGuest;
+        return this.numberOfGuest;
     };
 
     this.setPartyName = function (name) {
@@ -28,6 +30,34 @@ dinnerPlannerApp.factory('Dinner', function ($resource) {
         return this.partyName;
     };
 
+    this.addDishToMenu = function(dish) {
+        for (var i = 0; i < fullMenu.length; i++) {
+            if (fullMenu[i].Category === dish.Category) {
+                //remove
+                fullMenu.splice(i, 1);
+            }
+        }
+
+        //add the new one
+        fullMenu.push(dish);
+    };
+
+    this.getFullMenu = function() {
+        return fullMenu;
+    };
+
+    this.getDishPrice = function(dish) {
+        if(!dish) return 0;
+        var price = 0;
+        for(var i = 0; i < dish.Ingredients.length; i++) {
+            if(isNaN(dish.Ingredients[i].DisplayQuantity * this.getNumberOfGuests())) {
+
+            } else {
+                price += dish.Ingredients[i].DisplayQuantity * this.getNumberOfGuests();
+            }
+        }
+        return price;
+    };
 
 
     // TODO in Lab 5: Add your model code from previous labs
