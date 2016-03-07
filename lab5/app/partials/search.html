@@ -10,7 +10,8 @@ not support it in free version) and list all the dishes that match the search. -
 <div id="select-dish">
     <h1>Select Dish</h1>
 				<span id="searchbar">
-					Keywords: <input ng-model="query" id="searchfield" type="text" style="color:black" placeholder="Search">
+					Keywords: <input ng-model="query" id="searchfield" type="text" style="color:black"
+                                     placeholder="Search">
 				</span>
     <button ng-click="search(query, singleSelect)">Find</button>
 
@@ -25,6 +26,11 @@ not support it in free version) and list all the dishes that match the search. -
 </div>
 
 <div id="meals-view">
+
+    <div ng-show="loading">Loading</div>
+    <div ng-show="error">error</div>
+
+
     <div ng-repeat="dish in dishes" ng-if="$index % 3 == 0" class="row">
 
         <div class="col-md-4 meal-container">

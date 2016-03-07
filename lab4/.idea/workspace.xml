@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2758b9d0-bebd-43da-889b-1c095e8de0e9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab5/app/css/main.css" afterPath="$PROJECT_DIR$/../lab5/app/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab5/app/js/dinnerCtrl.js" afterPath="$PROJECT_DIR$/../lab5/app/js/dinnerCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab5/app/js/dinnerService.js" afterPath="$PROJECT_DIR$/../lab5/app/js/dinnerService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab5/app/js/dishCtrl.js" afterPath="$PROJECT_DIR$/../lab5/app/js/dishCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab5/app/js/searchCtrl.js" afterPath="$PROJECT_DIR$/../lab5/app/js/searchCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab5/app/partials/dinner-sidebar.html" afterPath="$PROJECT_DIR$/../lab5/app/partials/dinner-sidebar.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab5/app/partials/dish.html" afterPath="$PROJECT_DIR$/../lab5/app/partials/dish.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab5/app/partials/overview.html" afterPath="$PROJECT_DIR$/../lab5/app/partials/overview.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab5/app/partials/preparationsOverview.html" afterPath="$PROJECT_DIR$/../lab5/app/partials/preparationsOverview.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab5/app/partials/search.html" afterPath="$PROJECT_DIR$/../lab5/app/partials/search.html" />
     </list>
     <ignored path="lab4.iws" />
