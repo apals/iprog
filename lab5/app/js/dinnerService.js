@@ -60,6 +60,15 @@ dinnerPlannerApp.factory('Dinner', function ($resource) {
     };
 
 
+    this.getTotalMenuCost = function() {
+        var price = 0;
+        for(var i = 0; i < fullMenu.length; i++) {
+            price += this.getDishPrice(fullMenu[i]);
+        }
+        return price;
+    };
+
+
     // TODO in Lab 5: Add your model code from previous labs
     // feel free to remove above example code
     // you will need to modify the model (getDish and getAllDishes)
