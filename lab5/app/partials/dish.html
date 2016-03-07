@@ -10,14 +10,15 @@ Instructions, Ingredients and total cost. -->
     <div class="container">
         <div class="row">
             <div id="detail-view" class="col-md-6">
-                <button id="back-to-select-dish-btn">Back to 'Select dish'</button>
+                <a id="back-to-select-dish-btn" href="#/search" class="btn btn-default">Back to select dish</a>
+
                 <h2></h2><img ng-src="{{dish.ImageURL}}">
 
                 <p class="small-text"></p></div>
 
 
             <div id="ingredientsView" class="col-md-6">
-                <button id="confirm-dish-btn">Add dish to menu</button>
+                <button id="confirm-dish-btn" ng-click="addDishToMenu()">Add dish to menu</button>
                 <h2>Ingredients for {{getNumberOfGuests()}} people</h2>
 
                 {{dish.ImageUrl}}

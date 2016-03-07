@@ -21,15 +21,19 @@ dinnerPlannerApp.controller('DishCtrl', function ($scope,$routeParams,Dinner) {
 
     $scope.getNumberOfGuests = function() {
         return Dinner.getNumberOfGuests();
-    }
+    };
 
     $scope.getTotalDishPrice = function() {
-        if(!dish) return 0;
-        var price = 0;
-        for(var i = 0; i < dish.Ingredients.length; i++) {
-            price += dish.Ingredients.DisplayQuantity *  Dinner.getNumberOfGuests();
-        }
-        return price;
-    }
+        Dinner.getDishPrice(dish);
+    };
+
+
+    $scope.addDishToMenu = function() {
+        if(!dish) return;
+
+        console.log("yeah adding dish to menu");
+
+        Dinner.addDishToMenu(dish);
+    };
   
 });
