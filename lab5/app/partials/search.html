@@ -22,12 +22,23 @@ not support it in free version) and list all the dishes that match the search. -
 				</span>
 </div>
 
-{{status}}
-<ul>
-    <li ng-repeat="dish in dishes">
-        <img id="dish-picture" ng-src="{{dish.ImageURL}}"/>
-        {{dish.Title}}
-        <a ng-href="#/dish/{{dish.RecipeID}}">View more</a>
-        {{dish.Category}} {{dish.Subcategory}}
-    </li>
-</ul>
+<div id="meals-view">
+    <div ng-repeat="dish in dishes" ng-if="$index % 3 == 0" class="row">
+
+        <div class="col-md-4 meal-container">
+            <img id="dish-in-view" ng-src="{{dishes[$index].ImageURL}}">
+            <a ng-href="#/dish/{{dishes[$index].RecipeID}}"><p>{{dishes[$index].Title}}</p></a>
+        </div>
+
+        <div class="col-md-4 meal-container">
+            <img id="dish-in-view" ng-src="{{dishes[$index + 1].ImageURL}}">
+            <a ng-href="#/dish/{{dishes[$index + 1].RecipeID}}"><p>{{dishes[$index + 1].Title}}</p></a>
+        </div>
+
+        <div class="col-md-4 meal-container">
+            <img id="dish-in-view" ng-src="{{dishes[$index + 2].ImageURL}}">
+            <a ng-href="#/dish/{{dishes[$index + 2].RecipeID}}"><p>{{dishes[$index + 2].Title}}</p></a>
+        </div>
+
+    </div>
+</div>

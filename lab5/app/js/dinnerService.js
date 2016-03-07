@@ -8,7 +8,7 @@ dinnerPlannerApp.factory('Dinner', function ($resource) {
     const api_key = "18f3cT02U9f6yRl3OKDpP8NA537kxYKu";
     this.numberOfGuest = 2;
     var partyName = "";
-    this.DishSearch = $resource('http://api.bigoven.com/recipes',{pg:1,rpp:25,api_key: api_key});
+    this.DishSearch = $resource('http://api.bigoven.com/recipes',{pg:1,rpp:6,api_key: api_key});
     this.Dish = $resource('http://api.bigoven.com/recipe/:id',{api_key: api_key});
 
     var fullMenu = [];
