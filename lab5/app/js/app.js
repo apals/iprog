@@ -50,6 +50,7 @@ dinnerPlannerApp.config(['$routeProvider',
         }).
         when('/overview', {
             templateUrl: 'partials/overview.html',
+            controller: 'overviewCtrl'
         }).
         when('/preparations', {
             templateUrl: 'partials/preparationsOverview.html',

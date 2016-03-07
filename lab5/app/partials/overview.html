@@ -1,4 +1,25 @@
 <ng-include src="'partials/top-container.html'" ng-controller="TopContainerCtrl"></ng-include>
 
+    <div ng-repeat="dish in getFullMenu()">
 
-hello
+
+        <div class="col-md-4 meal-container">
+            <img id="dish-in-view" ng-src="{{dish.ImageURL}}">
+            hejsan sweg
+            <a ng-href="#/dish/{{dish.RecipeID}}"></a>
+            <p>{{dish.Title}}</p>
+        </div>
+<!--
+        <div class="col-md-4 meal-container">
+            <img id="dish-in-view" ng-src="{{dish.ImageURL}}">
+            <a ng-href="#/dish/{{dishes[$index + 1].RecipeID}}"><p>{{dishes[$index + 1].Title}}</p></a>
+        </div>
+
+        <div class="col-md-4 meal-container">
+            <img id="dish-in-view" ng-src="{{dish.ImageURL}}">
+            <a ng-href="#/dish/{{dishes[$index + 2].RecipeID}}"><p>{{dishes[$index + 2].Title}}</p></a>
+        </div>-->
+
+    </div>
+
+<a id="prep-dish-btn" href="#/preparations" class="btn btn-default">Print full recipe</a>
