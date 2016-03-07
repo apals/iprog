@@ -10,7 +10,7 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope, Dinner) {
 
     $scope.getNumberOfGuests = function () {
         return Dinner.getNumberOfGuests();
-    }
+    };
 
     $scope.setPartyName = function (name) {
         Dinner.setPartyName(name);
