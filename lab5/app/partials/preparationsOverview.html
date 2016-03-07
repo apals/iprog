@@ -1,0 +1,46 @@
+<ng-include src="'partials/top-container.html'" ng-controller="TopContainerCtrl"></ng-include>
+
+<div class="container" id="preparations-overview-view" style="display: block;">
+    <div ng-repeat="dish in getFullMenu()" class="row">
+
+
+        <img ng-src="{{dish.ImageURL}}" class="col-md-4">
+
+
+        <div class="col-md-4">
+            <h3>{{dish.Title}}</h3>
+            <p>{{dish.Description}}</p>
+        </div>
+
+        <div class="col-md-4">
+            <h3>Preparations</h3>
+            <p>{{dish.Instructions}}</p>
+        </div>
+
+    </div>
+    <div class="meal-preparation row"><img src="http://redirect.bigoven.com/pics/rs/640/starter-shrimp-dumplings-2.jpg"
+                                           class="col-md-4">
+
+        <div class="col-md-4"><h3>Starter: Shrimp Dumplings</h3>
+
+            <p>Delicious dumplings that are great for parties - you can even have your guests help assemble these tasty
+                dumplings with you.</p></div>
+        <div class="col-md-4"><h3>Preparations</h3>
+
+            <p>1. To prepare sauce, combine the 1st 5 ingredients.
+
+                2. To prepare dumplings, heat oil in a medium nonstick skillet over medium-high heat. Add leek and I
+                tablespoon ginger, saute 3 minutes. Remove from heat. Combine leek mixture, mirin, salt, black pepper
+                and shrimp, stirring well.
+
+                3. Working with 1 wonton wrapper at a time (cover remaining wrappers with a damp towel to prevent
+                drying), spoon about.1 tablespoon shrimp mixture into center of each wrapper. Moisten edges of wrapper
+                with water, bring 2 opposite corners to center, pinching points to seal. Bring remaining 2 corners to
+                center, pinching points to seal. Pinch 4 edges together to seal.
+
+                4. Add water to a wok or large skillet to a depth of 1 inch, bring to a boil. Line a bamboo steamer with
+                leafy lettuce. Place about 15 dumplings on top of lettuce. Cover with steamer lid. Place steamer in pan,
+                steam dumplings 12 minutes. Remove dumplings from steamer, cover and keep warm. Repeat procedure with
+                the remaining dumplings. Serve with sauce.</p></div>
+    </div>
+</div>
