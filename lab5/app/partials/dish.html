@@ -4,4 +4,55 @@
 
 <!-- TODO in Lab 5: Display the dish information including image, Description, 
 Instructions, Ingredients and total cost. -->
-<p>{{dishPreparations}}</p>
+
+
+<div id="detail-view-container" style="display: block;"><span style="width: 100%; text-align: center" id="yeah"></span>
+
+    <div class="container">
+        <div class="row">
+            <div id="detail-view" class="col-md-6">
+                <button id="back-to-select-dish-btn">Back to 'Select dish'</button>
+                <h2></h2><img ng-src="{{dish.ImageURL}}">
+
+                <p class="small-text"></p></div>
+
+
+            <div id="ingredientsView" class="col-md-6">
+                <button id="confirm-dish-btn">Add dish to menu</button>
+                <h2>Ingredients for {{getNumberOfGuests()}} people</h2>
+
+                {{dish.ImageUrl}}
+
+                <table id="ingredients-table">
+                    <tbody>
+                        <tr ng-repeat="ingredient in dish.Ingredients">
+
+                            <td>{{ingredient.DisplayQuantity * getNumberOfGuests()}}</td>
+                            <td>{{ingredient.MetricUnit}}</td>
+                            <td>{{ingredient.Name}}</td>
+                            <td>{{ingredient.DisplayQuantity * getNumberOfGuests()}}</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <hr>
+                <div id="lastspan" style="width: 100px; height: 100px">Total price: {{getTotalDishPrice()}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div id="preparationsView" class="col-md-6">
+             <!--   <ul>
+                    <li href="#">In a medium bowl, mix tomatoes, dried basil, Parmesan cheese, olive oil, garlic, and
+                        season with salt and ground black pepper
+                    </li>
+                    <li href="#">Cover and chill in the refrigerator 8 hours, or overnight, before serving.</li>
+                </ul>-->
+                <p>{{dishPreparations}}</p>
+            </div>
+
+        </div>
+    </div>
+</div>
