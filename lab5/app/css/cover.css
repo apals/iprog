@@ -39,18 +39,17 @@ body {
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
-.site-wrapper {
+.site-wrapper-main {
     display: table;
     width: 100%;
     height: 100%; /* For at least Firefox */
     min-height: 100%;
-    -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-    box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+
 }
-.site-wrapper-inner {
+.site-wrapper-inner-main {
     display: table-cell;
 }
-.cover-container {
+.cover-container-main {
     margin-right: auto;
     margin-left: auto;
 }
@@ -63,11 +62,14 @@ body {
 
 .inner-cover {
     float: left;
-    width: 100%;
+    width: 50%;
     background-color: #222222;
     padding: 15px;
     border-radius: 65px 15px;
     opacity: 0.7;
+    margin-left: 25%;
+    margin-right: auto;
+    margin-top: 10%;
 }
 
 
@@ -77,6 +79,7 @@ body {
 .masthead-brand {
     margin-top: 10px;
     margin-bottom: 10px;
+
 }
 
 .masthead-nav > li {
@@ -173,5 +176,8 @@ body {
     .mastfoot,
     .cover-container {
         width: 700px;
+        horiz-align: center;
+
+        margin-left: 25%;
     }
 }
