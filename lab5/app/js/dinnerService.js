@@ -5,8 +5,8 @@
 // the next time.
 dinnerPlannerApp.factory('Dinner', function ($resource, $cookieStore) {
 
-    const api_key = "18f3cT02U9f6yRl3OKDpP8NA537kxYKu";
-
+    //const api_key = "18f3cT02U9f6yRl3OKDpP8NA537kxYKu";
+    const api_key = "sV1fPGQKrO0b6oUYb6w9kLI8BORLiWox";
 
     if ($cookieStore.get('numberOfGuests')) {
         this.numberOfGuest = $cookieStore.get('numberOfGuests');
