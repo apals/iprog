@@ -7,13 +7,13 @@
 Instructions, Ingredients and total cost. -->
 
 
-<div id="detail-view-container" style="display: block;"><span style="width: 100%; text-align: center" id="yeah"></span>
+<div id="detail-view-container">
 
-    <div ng-show="loading">Loading</div>
+    <div id="div-load" ng-show="loading"><img src="images/loading.gif"></div>
     <div ng-show="error">error</div>
 
 
-    <div class="container">
+    <div class="container" id="dish-div">
         <div class="row">
             <div id="detail-view" class="col-md-6">
                 <a id="back-to-select-dish-btn" href="#/search" class="btn btn-default">Back to select dish</a>
@@ -24,7 +24,7 @@ Instructions, Ingredients and total cost. -->
 
 
             <div id="ingredientsView" class="col-md-6">
-                <button id="confirm-dish-btn" ng-click="addDishToMenu()">Add dish to menu</button>
+                <button id="confirm-dish-btn" class="btn btn-default" ng-click="addDishToMenu()">Add dish to menu</button>
                 <h2>Ingredients for {{getNumberOfGuests()}} people</h2>
 
                 {{dish.ImageUrl}}
