@@ -11,9 +11,9 @@
 
 /* Handle how links are coloured */
 a:link {color:#FFFFFF;}
-a:visited {color:#000000;}
-a:hover {color:#000000;}
-a:active {color:#000000;}
+a:visited {color:#FFFFFF;}
+a:hover {color:#FFFFFF;}
+a:active {color:#FFFFFF;}
 
 /* BODY AND HTML*/
 body, html {
