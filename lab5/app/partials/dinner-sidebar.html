@@ -16,7 +16,7 @@
     <h4>Dish Name - Cost</h4>
 
     <p ng-repeat="dish in getFullMenu()">
-        {{dish.Title}} - {{getDishPrice(dish)}} <span ng-click="deleteFromMenu(dish)" style="color: red">X</span>
+        {{dish.Title}} - {{getDishPrice(dish)}} &nbsp; <span ng-click="deleteFromMenu(dish)" style="color: red">   X   </span>
     </p>
 
     <div id="dish-and-cost"><br><br>Total menu cost: {{getTotalMenuCost()}} kr.</div>
