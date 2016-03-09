@@ -100,15 +100,24 @@ header span {
     border-width: 0 0 2px 0;
     text-align: center;
     color: white;
+    font-size: 16px;
     font-family: Polo;
 }
 
 #typeSelector {
-    margin-left: 5%;
+    padding-left: 3%;
+}
+
+#types {
+    height: 30px;
+}
+
+#searchfield{
+    height: 30px;
 }
 
 #btn-in-search {
-    margin-left: 5%;
+    padding-left: 3%;
 }
 
 
@@ -296,8 +305,10 @@ button {
 
 #search-btn {
     width: 200px;
+    height: 30px;
     font-family: Polo;
-    font-size: 18px;
+    font-size: 16px;
+    padding-top: 4px;
 }
 
 

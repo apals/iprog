@@ -7,6 +7,7 @@ dinnerPlannerApp.controller('SearchCtrl', function ($scope, Dinner) {
     $scope.loading = false;
     $scope.error = false;
 
+
     $scope.search = function (query, singleSelect) {
 
         $scope.loading = true;

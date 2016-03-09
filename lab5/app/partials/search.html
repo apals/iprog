@@ -7,10 +7,14 @@
 not support it in free version) and list all the dishes that match the search. -->
 
 
+
+
 <div id="select-dish">
     <h1>Select Dish</h1>
-				<span id="searchbar">
-					Keywords: <input ng-model="query" id="searchfield" type="text" style="color:black"
+
+    <form>
+        <span id="searchbar">
+					Keywords: <input ng-keyup="myFunc()" ng-model="query" id="searchfield" type="text" style="color:black"
                                      placeholder="Search">
 				</span>
 
@@ -27,11 +31,14 @@ not support it in free version) and list all the dishes that match the search. -
             <span id="btn-in-search">
                 <button id="search-btn" class="btn btn-default" ng-click="search(query, singleSelect)">Find</button>
             </span>
+    </form>
+
 </div>
+
 
 <div id="meals-view">
 
-    <div id="div-load"ng-show="loading"><img src="images/loading.gif"></div>
+    <div id="div-load" ng-show="loading"><img src="images/loading.gif"></div>
     <div ng-show="error">An error occured. Please check your internet connection.</div>
 
 
